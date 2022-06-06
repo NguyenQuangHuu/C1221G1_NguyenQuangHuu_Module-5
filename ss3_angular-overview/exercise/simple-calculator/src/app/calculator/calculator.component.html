@@ -1,0 +1,32 @@
+<!--<form ngForm>-->
+<label>
+  <input [(ngModel)]="num" type="text" placeholder="Number 1" >
+</label>
+<label>
+  <input [(ngModel)]="num2" type="text" placeholder="Number 2">
+</label>
+<div>
+  <button type="button" (click)="calculator('+',num,num2)">+</button>
+</div>
+<div>
+  <button type="button" (click)="calculator('-',num,num2)">-</button>
+</div>
+<div>
+  <button type="button" (click)="calculator('*',num,num2)">*</button>
+</div>
+<div>
+  <button type="button" (click)="calculator('/',num,num2)">/</button>
+</div>
+  <footer>
+    Kết quả của phép tính :
+    <span [innerText]="result"></span>
+  </footer>
+
+<!--<div>-->
+<!--  <button (click)="addition()">+</button>-->
+<!--  <button (click)="subtract()">-</button>-->
+<!--  <button (click)="multiple()">*</button>-->
+<!--  <button (click)="divide()">/</button>-->
+<!--</div>-->
+<!--<div [ngModel]="result"></div>-->
+<!--</form>-->
