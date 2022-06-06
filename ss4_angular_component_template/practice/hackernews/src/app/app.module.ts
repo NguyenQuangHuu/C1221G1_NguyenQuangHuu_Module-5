@@ -2,13 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ColorPickerComponent } from './color-picker/color-picker.component';
+import { ArticleComponent } from './article/article.component';
 import {FormsModule} from '@angular/forms';
+import { LikeActionComponent } from './like-action/like-action.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ColorPickerComponent
+    ArticleComponent,
+    LikeActionComponent,
+    NavbarComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,
