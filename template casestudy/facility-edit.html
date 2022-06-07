@@ -3,6 +3,7 @@
 <head>
     <!-- basic -->
     <!-- Font Awesome -->
+    <meta charset="UTF-8">
     <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
             rel="stylesheet"
@@ -19,35 +20,39 @@
     />
 </head>
 <body>
+<h4 class="text-center text-danger">Màn hình chỉnh sửa dịch vụ</h4>
 <form action="">
     <div class="w-75 mx-auto py-xl-5">
-        <div class="form-outline">
+        <div class="form-outline my-2">
             <input type="text" id="form12" class="form-control" />
-            <label class="form-label" for="form12">Example label</label>
+            <label class="form-label" for="form12">Tên dịch vụ</label>
         </div>
         <div>
-            <select name="" id="" class="form-select">
-                <option value="1">1</option>
+            <select name="" id="" class="form-select w-25 my-2">
+                <option value="1">Loại dịch vụ</option>
                 <option value="1">1</option>
                 <option value="1">1</option>
             </select>
         </div>
 
-        <div class="form-outline">
+        <div class="form-outline my-2">
             <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
             <label class="form-label" for="textAreaExample">Message</label>
         </div>
 
-        <div class="form-outline w-25">
+        <div class="form-outline w-25 my-2">
             <input type="date" id="form" class="form-control" />
             <label class="form-label" for="form">Date picker</label>
         </div>
-        <div class="form-outline">
+        <div class="form-outline my-2">
             <input type="text" id="form16" class="form-control" data-mdb-showcounter="true" maxlength="20" />
             <label class="form-label" for="form16">Example label</label>
             <div class="form-helper"></div>
         </div>
-
+        <div>
+            <input type="submit" value="Xác nhận chỉnh sửa" class="btn btn-outline-info my-2">
+            <a href="#" class="btn btn-danger my-2">Trở lại</a>
+        </div>
     </div>
 
 </form>
