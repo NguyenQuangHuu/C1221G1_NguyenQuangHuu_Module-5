@@ -11,6 +11,9 @@ import { FacilityCreateComponent } from './facility-create/facility-create.compo
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import { FacilityEditComponent } from './facility-edit/facility-edit.component';
+import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
+import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
+import { ContractCreateComponent } from './contracts/contract-create/contract-create.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { FacilityEditComponent } from './facility-edit/facility-edit.component';
     HeaderComponent,
     FooterComponent,
     FacilityCreateComponent,
-    FacilityEditComponent
+    FacilityEditComponent,
+    CustomerCreateComponent,
+    CustomerEditComponent,
+    ContractCreateComponent
   ],
   imports: [
     BrowserModule,

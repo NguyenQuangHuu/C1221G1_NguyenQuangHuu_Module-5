@@ -5,6 +5,11 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {FacilityCreateComponent} from './facility-create/facility-create.component';
 import {FacilityEditComponent} from './facility-edit/facility-edit.component';
+import {CustomerComponent} from './customer/customer/customer.component';
+import {CustomerCreateComponent} from './customer/customer-create/customer-create.component';
+import {CustomerEditComponent} from './customer/customer-edit/customer-edit.component';
+import {ContractComponent} from './contracts/contract/contract.component';
+import {ContractCreateComponent} from './contracts/contract-create/contract-create.component';
 
 const  routes: Routes = [
   {
@@ -18,10 +23,23 @@ const  routes: Routes = [
   },
   {
     path: 'facility-edit', component : FacilityEditComponent
+  },
+  {
+    path: 'customer', component : CustomerComponent
+  },
+  {
+    path: 'customer-create', component : CustomerCreateComponent
+  },
+  {
+    path: 'customer-edit',component: CustomerEditComponent
+  },
+  {
+    path: 'contract', component: ContractComponent
+  },
+  {
+    path: 'contract-create', component:ContractCreateComponent
   }
 ];
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -29,6 +47,6 @@ const  routes: Routes = [
     BrowserModule,
     FormsModule,
   ],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
