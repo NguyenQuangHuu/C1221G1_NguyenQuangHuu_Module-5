@@ -1,19 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {Facility} from './facility';
+import { Component, OnInit } from '@angular/core';
+import {Facility} from '../facility/facility';
 
 @Component({
-  selector: 'app-facility',
-  templateUrl: './facility.component.html',
-  styleUrls: ['./facility.component.css']
+  selector: 'app-homepage',
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.css']
 })
-export class FacilityComponent implements OnInit {
+export class HomepageComponent implements OnInit {
   facilities: Facility[] = [
     {
       id: 1,
       code: 'VL-1234',
       name: 'Villa 4 Season',
       usable: 30.0,
-      price: 3000000,
+      price: 45000,
       convenience: 'Cám chim',
       floor: 4,
       capacity: 10,
@@ -25,9 +25,9 @@ export class FacilityComponent implements OnInit {
     {
       id: 2,
       code: 'VL-1234',
-      name: 'Villa Ocean',
+      name: 'Villa 4 Season',
       usable: 30.0,
-      price: 4500000,
+      price: 45000,
       convenience: 'Cám chim',
       floor: 4,
       capacity: 10,
@@ -39,9 +39,9 @@ export class FacilityComponent implements OnInit {
     {
       id: 3,
       code: 'VL-1234',
-      name: 'Villa Front Ocean View',
+      name: 'Villa 4 Season',
       usable: 30.0,
-      price: 6000000,
+      price: 45000,
       convenience: 'Cám chim',
       floor: 4,
       capacity: 10,
@@ -53,9 +53,9 @@ export class FacilityComponent implements OnInit {
     {
       id: 4,
       code: 'VL-1234',
-      name: 'House 4 Season',
+      name: 'Villa 4 Season',
       usable: 30.0,
-      price: 1000000,
+      price: 45000,
       convenience: 'Cám chim',
       floor: 4,
       capacity: 10,
@@ -67,7 +67,7 @@ export class FacilityComponent implements OnInit {
     {
       id: 5,
       code: 'VL-1234',
-      name: 'House 4 U',
+      name: 'Villa 4 Season',
       usable: 30.0,
       price: 45000,
       convenience: 'Cám chim',
@@ -93,9 +93,7 @@ export class FacilityComponent implements OnInit {
       img: 'room6.jpg'
     },
   ];
-
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }

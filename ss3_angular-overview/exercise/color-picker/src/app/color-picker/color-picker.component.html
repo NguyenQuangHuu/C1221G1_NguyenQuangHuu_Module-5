@@ -1,6 +1,5 @@
-<button (click)="changeColor('blue')">Xanh</button>
-<button (click)="changeColor('red')">Đỏ</button>
-<button (click)="changeColor('purple')">Tím</button>
-<button (click)="changeColor('yellow')">Vàng</button>
-<button (click)="changeColor('cyan')">Xanh gì gì</button>
+
+<label>
+  <input type="color" [(ngModel)]="color">
+</label>
 <h4 [style]="{'color':color}" >Kết quả</h4>

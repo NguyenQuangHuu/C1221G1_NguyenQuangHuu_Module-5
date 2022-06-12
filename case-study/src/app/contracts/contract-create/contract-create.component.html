@@ -1,1 +1,51 @@
-<p>contract-create works!</p>
+<div class="container">
+  <h4 class="text-center text-primary my-4">Tạo hợp đồng</h4>
+  <form class="container mx-auto"  method="post" action="#">
+
+    <div class="form-outline my-2 col-4 mx-auto">
+      <input type="date" id="name" class="form-control" />
+      <label class="form-label" for="name">Ngày nhận phòng</label>
+    </div>
+
+    <div class="form-outline my-2 col-4 mx-auto">
+      <input type="date" id="email" class="form-control" />
+      <label class="form-label" for="email">Ngày trả phòng</label>
+    </div>
+
+    <div class="form-outline my-2 col-4 mx-auto">
+      <input type="text" id="deposit" class="form-control" />
+      <label class="form-label" for="deposit">Tiền cọc</label>
+    </div>
+
+    <div class="form-outline my-2 col-4 mx-auto">
+      <input type="text" id="bill" class="form-control" placeholder="Tổng tiền tạm tính" />
+      <label class="form-label" for="bill">Tổng tiền</label>
+    </div>
+
+
+    <div class="form-outline my-2 col-4 mx-auto">
+      <select  class="form-select" >
+        <option value="">--Tên nhân viên làm hợp đồng--</option>
+
+      </select>
+
+    </div>
+    <div class="form-outline my-2 col-4 mx-auto" >
+      <select id="typeCustomer"  class="form-select">
+        <option value="">--Tên khách hàng đặt phòng--</option>
+
+      </select>
+
+    </div>
+    <div class="form-outline my-2 col-4 mx-auto" >
+      <select id="facilityChange"  class="form-select" >
+        <option value="">--Dịch vụ được cung cấp--</option>
+
+      </select>
+    </div>
+
+    <div class="col-4 my-2 mx-auto">
+      <input type="submit" id="register" value="Tạo hợp đồng" class="btn btn-secondary w-100">
+    </div>
+  </form>
+</div>

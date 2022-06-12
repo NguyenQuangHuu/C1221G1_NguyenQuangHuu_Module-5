@@ -10,10 +10,14 @@ import {CustomerCreateComponent} from './customer/customer-create/customer-creat
 import {CustomerEditComponent} from './customer/customer-edit/customer-edit.component';
 import {ContractComponent} from './contracts/contract/contract.component';
 import {ContractCreateComponent} from './contracts/contract-create/contract-create.component';
+import {HomepageComponent} from './homepage/homepage.component';
 
 const  routes: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: '/facility'
+    path: '', pathMatch: 'full', redirectTo: '/home'
+  },
+  {
+    path: 'home', component : HomepageComponent
   },
   {
     path: 'facility', component: FacilityComponent
@@ -31,13 +35,13 @@ const  routes: Routes = [
     path: 'customer-create', component : CustomerCreateComponent
   },
   {
-    path: 'customer-edit',component: CustomerEditComponent
+    path: 'customer-edit', component : CustomerEditComponent
   },
   {
     path: 'contract', component: ContractComponent
   },
   {
-    path: 'contract-create', component:ContractCreateComponent
+    path: 'contract-create', component: ContractCreateComponent
   }
 ];
 @NgModule({
