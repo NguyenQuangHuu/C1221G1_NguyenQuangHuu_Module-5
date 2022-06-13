@@ -1,0 +1,21 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+  <label>
+    Email:
+    <input type="email">
+    <p *ngIf="loginForm.controls.email.hasError('required') && loginForm.controls.email.touched">Không để trống trường này!</p>
+    <p *ngIf="loginForm.controls.email.hasError('pattern') && loginForm.controls.email.touched">Sai định dạng email</p>
+  </label>
+  <label>
+    Mật khẩu:
+    <input type="password">
+    <p *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.email.touched">Không để trống trường này!</p>
+    <p *ngIf="loginForm.controls.password.hasError('minlength') && loginForm.controls.email.touched">Mật khẩu phải từ 6 ký tự</p>
+
+  </label>
+
+</div>
+<div>
+  <button type="submit">Đăng nhập</button>
+</div>
+</form>
