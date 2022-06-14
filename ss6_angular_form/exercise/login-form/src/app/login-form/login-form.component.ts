@@ -8,14 +8,15 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
-  constructor() {this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required,
-        Validators.pattern('/^[a-zA-Z0-9.! #$%&\'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\. [a-zA-Z0-9-]+)*$/')])
-    , password: new FormControl('', [Validators.required, Validators.minLength(6)])
-  });
+  constructor() {
   }
 
   ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required,
+        Validators.email])
+      , password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    });
   }
 
   onSubmit() {

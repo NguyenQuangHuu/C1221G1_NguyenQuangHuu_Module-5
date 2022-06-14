@@ -1,46 +1,47 @@
 <div class="container">
-  <h4 class="text-center text-primary my-4">Tạo hợp đồng</h4>
-  <form class="container mx-auto"  method="post" action="#">
+  <h4 class="text-center text-danger my-4 h4 font-weight-normal">Tạo hợp đồng</h4>
+  <form class="container mx-auto"  [formGroup]="contractCreate" (ngSubmit)="submitContract()">
 
     <div class="form-outline my-2 col-4 mx-auto">
-      <input type="date" id="name" class="form-control" />
       <label class="form-label" for="name">Ngày nhận phòng</label>
+      <input type="date" id="name" class="form-control" formControlName="startDate"/>
+
     </div>
 
     <div class="form-outline my-2 col-4 mx-auto">
-      <input type="date" id="email" class="form-control" />
       <label class="form-label" for="email">Ngày trả phòng</label>
+      <input type="date" id="email" class="form-control" formControlName="endDate"/>
+
     </div>
 
     <div class="form-outline my-2 col-4 mx-auto">
-      <input type="text" id="deposit" class="form-control" />
       <label class="form-label" for="deposit">Tiền cọc</label>
+      <input type="text" id="deposit" class="form-control" formControlName="deposit"/>
+
     </div>
 
     <div class="form-outline my-2 col-4 mx-auto">
-      <input type="text" id="bill" class="form-control" placeholder="Tổng tiền tạm tính" />
       <label class="form-label" for="bill">Tổng tiền</label>
+      <input type="text" id="bill" class="form-control" placeholder="Tổng tiền tạm tính" />
     </div>
 
 
-    <div class="form-outline my-2 col-4 mx-auto">
-      <select  class="form-select" >
-        <option value="">--Tên nhân viên làm hợp đồng--</option>
+<!--    <div class="form-outline my-2 col-4 mx-auto">-->
+<!--      <select  class="form-select" >-->
+<!--        <option value="">&#45;&#45;Tên nhân viên làm hợp đồng&#45;&#45;</option>-->
 
-      </select>
+<!--      </select>-->
 
-    </div>
+<!--    </div>-->
     <div class="form-outline my-2 col-4 mx-auto" >
-      <select id="typeCustomer"  class="form-select">
+      <select id="typeCustomer"  class="form-control" formControlName="customer">
         <option value="">--Tên khách hàng đặt phòng--</option>
-
       </select>
 
     </div>
     <div class="form-outline my-2 col-4 mx-auto" >
-      <select id="facilityChange"  class="form-select" >
+      <select id="facilityChange"  class="form-control" formControlName="facility">
         <option value="">--Dịch vụ được cung cấp--</option>
-
       </select>
     </div>
 

@@ -1,27 +1,29 @@
 <div class="container-fluid">
   <!-- Tab content -->
 
-  <h4 class="text-secondary text-center my-2">Danh sách khách hàng</h4>
-  <a href="#" class="btn btn-detail">Đăng kí khách hàng mới</a>
+  <h4 class="text-secondary text-center my-2 h5">Danh sách khách hàng</h4>
+  <a [routerLink]="['/customer-create']" class="btn btn-outline-danger">Đăng kí khách hàng mới</a>
   <form method="get">
     <div class="row">
 
       <div class="form-outline my-2 col-3 mx-3">
-        <input type="text" id="searchName" class="form-control" name="nameQuery"/>
-        <label class="form-label" for="searchName">Tìm kiếm theo tên</label>
+
+        <input type="text" id="searchName" class="form-control" name="nameQuery" placeholder="Tìm kiếm theo tên"/>
+
       </div>
       <div class="form-outline my-2 col-3 me-2">
-        <input type="text" id="searchPhone" class="form-control" name="phoneQuery"/>
-        <label class="form-label" for="searchPhone">Tìm kiếm theo số điện thoại</label>
+
+        <input type="text" id="searchPhone" class="form-control" name="phoneQuery" placeholder="Tìm kiếm theo Số điện thoại"/>
+
       </div>
 
       <div class="form-outline my-2 col-3 mx-2">
-        <select id="searchType" class="form-select" name="typeQuery">
+        <select id="searchType" class="form-control" name="typeQuery">
           <option value="">--Chọn loại khách hàng--</option>
 
         </select>
       </div>
-      <input type="submit" id="searchSubmit" value="tìm kiếm" class="btn btn-secondary col-2 my-2">
+      <input type="submit" id="searchSubmit" value="tìm kiếm" class="btn btn-outline-dark col-2 my-2">
 
     </div>
   </form>
@@ -67,8 +69,8 @@
         <span *ngIf="customer.gender == 1">Nam</span>
       </td>
       <td id="action">
-        <a class="btn btn-detail" href="#">Edit</a>
-        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+        <a class="btn btn-outline-info mx-2" href="#">Edit</a>
+        <button type="button" class="btn btn-outline-primary mx-2" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
           Delete
         </button>
         <!--                    <a class="btn btn-danger" th:href="@{/customers/delete/{id}(id=${customer.id})}">Delete</a>-->

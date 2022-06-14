@@ -15,6 +15,7 @@ import { CustomerCreateComponent } from './customer/customer-create/customer-cre
 import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
 import { ContractCreateComponent } from './contracts/contract-create/contract-create.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,13 @@ import { HomepageComponent } from './homepage/homepage.component';
     ContractCreateComponent,
     HomepageComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    CommonModule,
-    AppRoutingModule,
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule,
+        CommonModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,36 +1,62 @@
-<h4 class="text-center text-black-50">Màn hình thêm mới dịch vụ</h4>
-<form action="">
+<h4 class="text-center text-black-50 h4">Màn hình thêm mới dịch vụ</h4>
+<form [formGroup]="facilityCreateFG" (ngSubmit)="facilityCreateSubmit()">
   <div class="w-75 mx-auto py-xl-5 ">
     <div class="form-outline my-2">
+      <label class="form-label" for="form12">Mã dịch vụ</label>
+      <input type="text" class="form-control border" formControlName="code" />
+    </div>
+    <div class="form-outline my-2">
       <label class="form-label" for="form12">Tên dịch vụ</label>
-      <input type="text" id="form12" class="form-control border" />
+      <input type="text" id="form12" class="form-control border" formControlName="name"/>
     </div>
     <div class="my-2">
-      <select name="" id="" class="form-select">
-        <option value="1">Loại dịch vụ</option>
+      <select name="" id="" class="form-control" formControlName="type">
+        <option value="1">Loại phòng</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </div>
+    <div class="my-2">
+      <select name=""  class="form-control" formControlName="rent_type">
+        <option value="1">Kiểu thuê</option>
         <option value="1">1</option>
         <option value="2">2</option>
       </select>
     </div>
 
     <div class="form-outline my-2">
-      <label class="form-label" for="textAreaExample">Mô tả</label>
-      <textarea class="form-control border" id="textAreaExample" rows="4"></textarea>
+      <label class="form-label" for="textAreaExample">Mô tả dịch vụ đi kèm</label>
+      <textarea class="form-control border" id="textAreaExample" rows="4" formControlName="convenience"></textarea>
 
     </div>
 
-    <div class="form-outline w-25 my-2">
-      <label class="form-label" for="form">Ngày tạo mới</label>
-      <input type="date" id="form" class="form-control border" />
+    <div class="form-outline w-50 my-2">
+      <label class="form-label" for="form">Giá thuê</label>
+      <input type="text" id="form" class="form-control border" formControlName="price"/>
     </div>
     <div class="form-outline my-2">
-      <label class="form-label" for="form16">Example label</label>
-      <input type="text" id="form16" class="form-control border" data-mdb-showcounter="true" maxlength="20" />
+      <label class="form-label" >Diện tích sử dụng</label>
+      <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="usable"/>
+      <div class="form-helper"></div>
+    </div>
+    <div class="form-outline my-2">
+      <label class="form-label" >Số tầng</label>
+      <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="floor"/>
+      <div class="form-helper"></div>
+    </div>
+    <div class="form-outline my-2">
+      <label class="form-label" >Giới hạn người tối đa</label>
+      <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="capacity"/>
+      <div class="form-helper"></div>
+    </div>
+    <div class="form-outline my-2">
+      <label class="form-label" >Diện tích hồ bơi</label>
+      <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="pool_usable" />
       <div class="form-helper"></div>
     </div>
     <div>
-      <input type="submit" value="Thêm mới">
-      <a href="#">Trở lại</a>
+      <input class="btn btn-outline-warning mx-2" type="submit" value="Thêm mới">
+      <a class="btn btn-outline-danger mx-2" [routerLink]="['/']">Trở lại</a>
     </div>
 
   </div>

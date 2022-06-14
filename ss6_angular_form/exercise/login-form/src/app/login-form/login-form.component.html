@@ -2,13 +2,13 @@
   <div>
   <label>
     Email:
-    <input type="email">
+    <input type="email" formControlName="email">
     <p *ngIf="loginForm.controls.email.hasError('required') && loginForm.controls.email.touched">Không để trống trường này!</p>
-    <p *ngIf="loginForm.controls.email.hasError('pattern') && loginForm.controls.email.touched">Sai định dạng email</p>
+    <p *ngIf="loginForm.controls.email.hasError('email') && loginForm.controls.email.touched">Sai định dạng email</p>
   </label>
   <label>
     Mật khẩu:
-    <input type="password">
+    <input type="password" formControlName="password">
     <p *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.email.touched">Không để trống trường này!</p>
     <p *ngIf="loginForm.controls.password.hasError('minlength') && loginForm.controls.email.touched">Mật khẩu phải từ 6 ký tự</p>
 
