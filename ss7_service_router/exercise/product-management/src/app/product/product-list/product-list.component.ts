@@ -20,4 +20,7 @@ export class ProductListComponent implements OnInit {
     return  this.service.getAll();
   }
 
+  onDelete(id: number) {
+    this.service.delete(id);
+  }
 }

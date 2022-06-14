@@ -57,11 +57,24 @@ export class ProductService {
     for(let i = 0; i< this.products.length;i++){
       console.log(this.products[i]);
       if(this.products[i].id === value.id){
-        this.products[i].name = value.name;
-        this.products[i].price = value.price;
-        this.products[i].description = value.description;
+        this.products[i] = value;
+        // this.products[i].name = value.name;
+        // this.products[i].price = value.price;
+        // this.products[i].description = value.description;
         console.log(this.products[i]);
       }
     }
+  }
+
+  delete(id: number) {
+    for(let i = 0; i<this.products.length; i++){
+        if(this.products[i].id === id){
+        for(let j = i ; j<this.products.length;j++){
+            this.products[j] = this.products[j+1];
+        }
+        this.products.pop();
+      }
+    }
+
   }
 }
