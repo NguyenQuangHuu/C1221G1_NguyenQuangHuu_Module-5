@@ -8,10 +8,9 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class FacilityCreateComponent implements OnInit {
   facilityCreateFG: FormGroup;
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
     this.facilityCreateFG = new FormGroup({
+      id: new FormControl(0),
       code: new FormControl(''),
       name: new FormControl(''),
       type: new FormControl(''),
@@ -24,6 +23,9 @@ export class FacilityCreateComponent implements OnInit {
       standard_room: new FormControl(''),
       rent_type: new FormControl(''),
     });
+  }
+
+  ngOnInit(): void {
   }
   facilityCreateSubmit() {
     console.log(this.facilityCreateFG.value);

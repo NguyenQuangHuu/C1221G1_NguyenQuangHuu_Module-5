@@ -8,16 +8,18 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class ContractCreateComponent implements OnInit {
   contractCreate: FormGroup;
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
     this.contractCreate = new FormGroup({
-      startDate: new FormControl('',[Validators.pattern('')]),
-      endDate: new FormControl('',[Validators.pattern('')]),
-      deposit: new FormControl('',[Validators.pattern('')]),
+      startDate: new FormControl(''),
+      endDate: new FormControl(''),
+      deposit: new FormControl(''),
       customer: new FormControl(''),
       facility: new FormControl('')
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
   submitContract() {

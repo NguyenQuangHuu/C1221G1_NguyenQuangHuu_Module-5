@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-customer-edit',
@@ -8,9 +8,26 @@ import {FormGroup} from '@angular/forms';
 })
 export class CustomerEditComponent implements OnInit {
   editCustomerForm: FormGroup;
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    this.editCustomerForm = new FormGroup({
+      id: new FormControl(0),
+      code: new FormControl(''),
+      name: new FormControl(''),
+      email: new FormControl(''),
+      dayOfBirth: new FormControl(''),
+      identify: new FormControl(''),
+      phoneNumber: new FormControl(''),
+      address: new FormControl(''),
+      gender: new FormControl(''),
+      type: new FormControl('')
+    });
   }
 
+  ngOnInit(): void {
+
+  }
+
+  editCustomerSubmit() {
+    console.log(this.editCustomerForm.value);
+  }
 }

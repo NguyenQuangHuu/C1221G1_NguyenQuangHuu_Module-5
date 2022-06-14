@@ -8,9 +8,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class CustomerCreateComponent implements OnInit {
   customerFormGroup: FormGroup;
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
     this.customerFormGroup = new FormGroup({
       id: new FormControl(0),
       code: new FormControl(''),
@@ -23,6 +21,10 @@ export class CustomerCreateComponent implements OnInit {
       gender: new FormControl(''),
       type: new FormControl('')
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
   onCustomerSubmit() {

@@ -1,5 +1,5 @@
 <h4 class="text-center text-danger h3">Màn hình chỉnh sửa dịch vụ</h4>
-<form action="">
+<form [formGroup]="editFacilityForm" (ngSubmit)="editFacilitySubmit()">
   <div class="w-75 mx-auto py-xl-5">
     <div class="form-outline my-2">
       <label class="form-label" for="form12">Tên dịch vụ</label>
