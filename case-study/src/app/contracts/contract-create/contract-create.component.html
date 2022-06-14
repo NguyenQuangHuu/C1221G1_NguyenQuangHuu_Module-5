@@ -4,8 +4,10 @@
 
     <div class="form-outline my-2 col-4 mx-auto">
       <label class="form-label" for="name">Ngày nhận phòng</label>
-      <input type="date" id="name" class="form-control" formControlName="startDate"/>
-
+      <input type="date" id="name" class="form-control" formControlName="startDate"/>=
+    </div>
+    <div>
+      <p *ngIf="contractCreate.controls.startDate.hasError('required') && contractCreate.controls.startDate.touched" ></p>
     </div>
 
     <div class="form-outline my-2 col-4 mx-auto">
@@ -13,13 +15,17 @@
       <input type="date" id="email" class="form-control" formControlName="endDate"/>
 
     </div>
-
+    <div>
+      <p *ngIf="contractCreate.controls.endDate.hasError('required') && contractCreate.controls.endDate.touched" ></p>
+    </div>
     <div class="form-outline my-2 col-4 mx-auto">
       <label class="form-label" for="deposit">Tiền cọc</label>
       <input type="text" id="deposit" class="form-control" formControlName="deposit"/>
 
     </div>
-
+    <div>
+      <p *ngIf="contractCreate.controls.deposit.hasError('required') && contractCreate.controls.deposit.touched" ></p>
+    </div>
     <div class="form-outline my-2 col-4 mx-auto">
       <label class="form-label" for="bill">Tổng tiền</label>
       <input type="text" id="bill" class="form-control" placeholder="Tổng tiền tạm tính" />
@@ -37,12 +43,19 @@
       <select id="typeCustomer"  class="form-control" formControlName="customer">
         <option value="">--Tên khách hàng đặt phòng--</option>
       </select>
-
+    </div>
+    <div>
+      <p *ngIf="contractCreate.controls.deposit.hasError('required') && contractCreate.controls.deposit.touched" ></p>
+      <p *ngIf="contractCreate.controls.deposit.hasError('pattern') && contractCreate.controls.deposit.touched" ></p>
     </div>
     <div class="form-outline my-2 col-4 mx-auto" >
       <select id="facilityChange"  class="form-control" formControlName="facility">
         <option value="">--Dịch vụ được cung cấp--</option>
       </select>
+    </div>
+
+    <div>
+      <p *ngIf="contractCreate.controls.deposit.hasError('required') && contractCreate.controls.deposit.touched" ></p>
     </div>
 
     <div class="col-4 my-2 mx-auto">

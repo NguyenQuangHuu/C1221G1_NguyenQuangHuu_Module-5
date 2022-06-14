@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-facility-create',
@@ -11,17 +11,21 @@ export class FacilityCreateComponent implements OnInit {
   constructor() {
     this.facilityCreateFG = new FormGroup({
       id: new FormControl(0),
-      code: new FormControl(''),
-      name: new FormControl(''),
-      type: new FormControl(''),
-      convenience: new FormControl(''),
-      usable: new FormControl(''),
-      price: new FormControl(''),
-      floors: new FormControl(''),
-      capacity: new FormControl(''),
-      pool_usable: new FormControl(''),
-      standard_room: new FormControl(''),
-      rent_type: new FormControl(''),
+      code: new FormControl('', [Validators.required, Validators.pattern('')]),
+      name: new FormControl('', [Validators.required, Validators.pattern('' +
+        '^(\\s?[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨ' +
+        'ƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂ' +
+        'ưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệ' +
+        'ỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]\\s?)*$')]),
+      type: new FormControl('', [Validators.required]),
+      convenience: new FormControl('', [Validators.required]),
+      usable: new FormControl('', [Validators.required, Validators.pattern('[+]?\\\\d*\\\\.?\\\\d*')]),
+      price: new FormControl('', [Validators.required, Validators.pattern('[+]?\\\\d*\\\\.?\\\\d*')]),
+      floors: new FormControl('', [Validators.required, Validators.pattern('[+]?\\\\d+')]),
+      capacity: new FormControl('', [Validators.required, Validators.pattern('[+]?\\\\d+')]),
+      pool_usable: new FormControl('', [Validators.required, Validators.pattern('[+]?\\\\d*\\\\.?\\\\d*')]),
+      standard_room: new FormControl('', [Validators.required]),
+      rent_type: new FormControl('', [Validators.required]),
     });
   }
 

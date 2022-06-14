@@ -5,9 +5,16 @@
       <label class="form-label" for="form12">Mã dịch vụ</label>
       <input type="text" class="form-control border" formControlName="code" />
     </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.code.hasError('required') && facilityCreateFG.controls.code.touched" >Trường này là bắt buộc</p>
+    </div>
     <div class="form-outline my-2">
       <label class="form-label" for="form12">Tên dịch vụ</label>
       <input type="text" id="form12" class="form-control border" formControlName="name"/>
+    </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.name.hasError('required') && facilityCreateFG.controls.name.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="facilityCreateFG.controls.name.hasError('pattern') && facilityCreateFG.controls.name.touched" >Tên không được chứa số</p>
     </div>
     <div class="my-2">
       <select name="" id="" class="form-control" formControlName="type">
@@ -16,6 +23,9 @@
         <option value="2">2</option>
       </select>
     </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.type.hasError('required') && facilityCreateFG.controls.type.touched" >Trường này là bắt buộc</p>
+    </div>
     <div class="my-2">
       <select name=""  class="form-control" formControlName="rent_type">
         <option value="1">Kiểu thuê</option>
@@ -23,36 +33,61 @@
         <option value="2">2</option>
       </select>
     </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.rent_type.hasError('required') && facilityCreateFG.controls.name.touched" >Trường này là bắt buộc</p>
+    </div>
 
     <div class="form-outline my-2">
       <label class="form-label" for="textAreaExample">Mô tả dịch vụ đi kèm</label>
       <textarea class="form-control border" id="textAreaExample" rows="4" formControlName="convenience"></textarea>
-
+    </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.convenience.hasError('required') && facilityCreateFG.controls.convenience.touched" >Trường này là bắt buộc</p>
     </div>
 
     <div class="form-outline w-50 my-2">
       <label class="form-label" for="form">Giá thuê</label>
       <input type="text" id="form" class="form-control border" formControlName="price"/>
     </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.price.hasError('required') && facilityCreateFG.controls.price.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="facilityCreateFG.controls.price.hasError('pattern') && facilityCreateFG.controls.price.touched" >Giá phải là số dương</p>
+    </div>
     <div class="form-outline my-2">
       <label class="form-label" >Diện tích sử dụng</label>
       <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="usable"/>
       <div class="form-helper"></div>
+    </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.usable.hasError('required') && facilityCreateFG.controls.usable.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="facilityCreateFG.controls.usable.hasError('pattern') && facilityCreateFG.controls.usable.touched" >Diện tích phải là số dương</p>
     </div>
     <div class="form-outline my-2">
       <label class="form-label" >Số tầng</label>
       <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="floor"/>
       <div class="form-helper"></div>
     </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.floor.hasError('required') && facilityCreateFG.controls.floor.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="facilityCreateFG.controls.floor.hasError('pattern') && facilityCreateFG.controls.floor.touched" >Số tầng phải là số dương</p>
+    </div>
     <div class="form-outline my-2">
       <label class="form-label" >Giới hạn người tối đa</label>
       <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="capacity"/>
       <div class="form-helper"></div>
     </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.capacity.hasError('required') && facilityCreateFG.controls.capacity.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="facilityCreateFG.controls.capacity.hasError('pattern') && facilityCreateFG.controls.capacity.touched" >Số lượng người tối đa phải là số dương</p>
+    </div>
     <div class="form-outline my-2">
       <label class="form-label" >Diện tích hồ bơi</label>
       <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="pool_usable" />
       <div class="form-helper"></div>
+    </div>
+    <div>
+      <p *ngIf="facilityCreateFG.controls.pool_usable.hasError('required') && facilityCreateFG.controls.pool_usable.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="facilityCreateFG.controls.pool_usable.hasError('pattern') && facilityCreateFG.controls.pool_usable.touched" >Diện tích hồ bơi phải là số dương</p>
     </div>
     <div>
       <input class="btn btn-outline-warning mx-2" type="submit" value="Thêm mới">

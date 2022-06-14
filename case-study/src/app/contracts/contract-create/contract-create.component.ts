@@ -12,7 +12,7 @@ export class ContractCreateComponent implements OnInit {
     this.contractCreate = new FormGroup({
       startDate: new FormControl(''),
       endDate: new FormControl(''),
-      deposit: new FormControl(''),
+      deposit: new FormControl('', [Validators.pattern('[+]?\\d+')]),
       customer: new FormControl(''),
       facility: new FormControl('')
     });

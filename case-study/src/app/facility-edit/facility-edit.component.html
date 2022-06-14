@@ -2,36 +2,96 @@
 <form [formGroup]="editFacilityForm" (ngSubmit)="editFacilitySubmit()">
   <div class="w-75 mx-auto py-xl-5">
     <div class="form-outline my-2">
-      <label class="form-label" for="form12">Tên dịch vụ</label>
-      <input type="text" id="form12" class="form-control" />
-
+      <label class="form-label" for="form12">Mã dịch vụ</label>
+      <input type="text" class="form-control border" formControlName="code" />
     </div>
     <div>
-      <select name="" id="" class="form-control w-25 my-2">
-        <option value="1">Loại dịch vụ</option>
+      <p *ngIf="editFacilityForm.controls.code.hasError('required') && editFacilityForm.controls.code.touched" >Trường này là bắt buộc</p>
+    </div>
+    <div class="form-outline my-2">
+      <label class="form-label" for="form12">Tên dịch vụ</label>
+      <input type="text" id="form12" class="form-control border" formControlName="name"/>
+    </div>
+    <div>
+      <p *ngIf="editFacilityForm.controls.name.hasError('required') && editFacilityForm.controls.name.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editFacilityForm.controls.name.hasError('pattern') && editFacilityForm.controls.name.touched" >Tên không được chứa số</p>
+    </div>
+    <div class="my-2">
+      <select name="" id="" class="form-control" formControlName="type">
+        <option value="1">Loại phòng</option>
         <option value="1">1</option>
-        <option value="1">1</option>
+        <option value="2">2</option>
       </select>
     </div>
-
-    <div class="form-outline my-2">
-      <label class="form-label" for="textAreaExample">Message</label>
-      <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-
+    <div>
+      <p *ngIf="editFacilityForm.controls.type.hasError('required') && editFacilityForm.controls.type.touched" >Trường này là bắt buộc</p>
     </div>
-
-    <div class="form-outline w-25 my-2">
-      <label class="form-label" for="form">Date picker</label>
-      <input type="date" id="form" class="form-control" />
-
-    </div>
-    <div class="form-outline my-2">
-      <label class="form-label" for="form16">Example label</label>
-      <input type="text" id="form16" class="form-control" data-mdb-showcounter="true" maxlength="20" />
+    <div class="my-2">
+      <select name=""  class="form-control" formControlName="rent_type">
+        <option value="1">Kiểu thuê</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
     </div>
     <div>
-      <input type="submit" value="Xác nhận chỉnh sửa" class="btn btn-outline-info m-2">
-      <a [routerLink]="['/facility']" class="btn btn-danger m-2">Trở lại</a>
+      <p *ngIf="editFacilityForm.controls.rent_type.hasError('required') && editFacilityForm.controls.name.touched" >Trường này là bắt buộc</p>
+    </div>
+
+    <div class="form-outline my-2">
+      <label class="form-label" for="textAreaExample">Mô tả dịch vụ đi kèm</label>
+      <textarea class="form-control border" id="textAreaExample" rows="4" formControlName="convenience"></textarea>
+    </div>
+    <div>
+      <p *ngIf="editFacilityForm.controls.convenience.hasError('required') && editFacilityForm.controls.convenience.touched" >Trường này là bắt buộc</p>
+    </div>
+
+    <div class="form-outline w-50 my-2">
+      <label class="form-label" for="form">Giá thuê</label>
+      <input type="text" id="form" class="form-control border" formControlName="price"/>
+    </div>
+    <div>
+      <p *ngIf="editFacilityForm.controls.price.hasError('required') && editFacilityForm.controls.price.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editFacilityForm.controls.price.hasError('pattern') && editFacilityForm.controls.price.touched" >Giá phải là số dương</p>
+    </div>
+    <div class="form-outline my-2">
+      <label class="form-label" >Diện tích sử dụng</label>
+      <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="usable"/>
+      <div class="form-helper"></div>
+    </div>
+    <div>
+      <p *ngIf="editFacilityForm.controls.usable.hasError('required') && editFacilityForm.controls.usable.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editFacilityForm.controls.usable.hasError('pattern') && editFacilityForm.controls.usable.touched" >Diện tích phải là số dương</p>
+    </div>
+    <div class="form-outline my-2">
+      <label class="form-label" >Số tầng</label>
+      <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="floor"/>
+      <div class="form-helper"></div>
+    </div>
+    <div>
+      <p *ngIf="editFacilityForm.controls.floor.hasError('required') && editFacilityForm.controls.floor.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editFacilityForm.controls.floor.hasError('pattern') && editFacilityForm.controls.floor.touched" >Số tầng phải là số dương</p>
+    </div>
+    <div class="form-outline my-2">
+      <label class="form-label" >Giới hạn người tối đa</label>
+      <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="capacity"/>
+      <div class="form-helper"></div>
+    </div>
+    <div>
+      <p *ngIf="editFacilityForm.controls.capacity.hasError('required') && editFacilityForm.controls.capacity.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editFacilityForm.controls.capacity.hasError('pattern') && editFacilityForm.controls.capacity.touched" >Số lượng người tối đa phải là số dương</p>
+    </div>
+    <div class="form-outline my-2">
+      <label class="form-label" >Diện tích hồ bơi</label>
+      <input type="text"  class="form-control border" data-mdb-showcounter="true" maxlength="20" formControlName="pool_usable" />
+      <div class="form-helper"></div>
+    </div>
+    <div>
+      <p *ngIf="editFacilityForm.controls.pool_usable.hasError('required') && editFacilityForm.controls.pool_usable.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editFacilityForm.controls.pool_usable.hasError('pattern') && editFacilityForm.controls.pool_usable.touched" >Diện tích hồ bơi phải là số dương</p>
+    </div>
+    <div>
+      <input class="btn btn-outline-warning mx-2" type="submit" value="Thêm mới">
+      <a class="btn btn-outline-danger mx-2" [routerLink]="['/']">Trở lại</a>
     </div>
   </div>
 
