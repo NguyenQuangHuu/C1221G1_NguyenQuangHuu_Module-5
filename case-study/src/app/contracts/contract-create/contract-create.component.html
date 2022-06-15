@@ -4,9 +4,9 @@
 
     <div class="form-outline my-2 col-4 mx-auto">
       <label class="form-label" for="name">Ngày nhận phòng</label>
-      <input type="date" id="name" class="form-control" formControlName="startDate"/>=
+      <input type="date" id="name" class="form-control" formControlName="startDate"/>
     </div>
-    <div>
+    <div class="my-2 col-4 mx-auto">
       <p *ngIf="contractCreate.controls.startDate.hasError('required') && contractCreate.controls.startDate.touched" ></p>
     </div>
 
@@ -15,7 +15,7 @@
       <input type="date" id="email" class="form-control" formControlName="endDate"/>
 
     </div>
-    <div>
+    <div class="my-2 col-4 mx-auto">
       <p *ngIf="contractCreate.controls.endDate.hasError('required') && contractCreate.controls.endDate.touched" ></p>
     </div>
     <div class="form-outline my-2 col-4 mx-auto">
@@ -23,7 +23,7 @@
       <input type="text" id="deposit" class="form-control" formControlName="deposit"/>
 
     </div>
-    <div>
+    <div class="my-2 col-4 mx-auto">
       <p *ngIf="contractCreate.controls.deposit.hasError('required') && contractCreate.controls.deposit.touched" ></p>
     </div>
     <div class="form-outline my-2 col-4 mx-auto">
@@ -40,26 +40,28 @@
 
 <!--    </div>-->
     <div class="form-outline my-2 col-4 mx-auto" >
-      <select id="typeCustomer"  class="form-control" formControlName="customer">
+      <select id="typeCustomer"  class="form-control" formControlName="customer" >
         <option value="">--Tên khách hàng đặt phòng--</option>
+        <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.name}} - {{customer.identify}} - {{customer.code}}</option>
       </select>
     </div>
-    <div>
+    <div class="my-2 col-4 mx-auto">
       <p *ngIf="contractCreate.controls.deposit.hasError('required') && contractCreate.controls.deposit.touched" ></p>
       <p *ngIf="contractCreate.controls.deposit.hasError('pattern') && contractCreate.controls.deposit.touched" ></p>
     </div>
     <div class="form-outline my-2 col-4 mx-auto" >
-      <select id="facilityChange"  class="form-control" formControlName="facility">
+      <select id="facilityChange"  class="form-control" formControlName="service" >
         <option value="">--Dịch vụ được cung cấp--</option>
+        <option *ngFor="let facility of facilities" [ngValue]="facility">{{facility.name}} - {{facility.price}} - {{facility.standard_room}}</option>
       </select>
     </div>
 
-    <div>
+    <div class="my-2 col-4 mx-auto">
       <p *ngIf="contractCreate.controls.deposit.hasError('required') && contractCreate.controls.deposit.touched" ></p>
     </div>
 
     <div class="col-4 my-2 mx-auto">
-      <input type="submit" id="register" value="Tạo hợp đồng" class="btn btn-secondary w-100">
+      <button type="submit" id="register" class="btn btn-secondary w-100">Tạo hợp đồng</button>
     </div>
   </form>
 </div>

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {FacilityComponent} from './facility/facility.component';
+import {FacilityComponent} from './facility/facility-list/facility.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
-import {FacilityCreateComponent} from './facility-create/facility-create.component';
-import {FacilityEditComponent} from './facility-edit/facility-edit.component';
-import {CustomerComponent} from './customer/customer/customer.component';
+import {FacilityCreateComponent} from './facility/facility-create/facility-create.component';
+import {FacilityEditComponent} from './facility/facility-edit/facility-edit.component';
+import {CustomerComponent} from './customer/customer-list/customer.component';
 import {CustomerCreateComponent} from './customer/customer-create/customer-create.component';
 import {CustomerEditComponent} from './customer/customer-edit/customer-edit.component';
 import {ContractComponent} from './contracts/contract/contract.component';
@@ -26,7 +26,7 @@ const  routes: Routes = [
     path: 'facility-create', component : FacilityCreateComponent
   },
   {
-    path: 'facility-edit', component : FacilityEditComponent
+    path: 'facility-edit/:id', component : FacilityEditComponent
   },
   {
     path: 'customer', component : CustomerComponent
@@ -35,7 +35,7 @@ const  routes: Routes = [
     path: 'customer-create', component : CustomerCreateComponent
   },
   {
-    path: 'customer-edit', component : CustomerEditComponent
+    path: 'customer-edit/:id', component : CustomerEditComponent
   },
   {
     path: 'contract', component: ContractComponent

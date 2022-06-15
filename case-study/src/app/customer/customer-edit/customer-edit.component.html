@@ -17,8 +17,8 @@
     </div>
 
     <div class="col-4 my-2 mx-auto">
-      <p *ngIf="editCustomerForm.controls.name.hasError('required') && editCustomerForm.controls.code.touched" >Trường này là bắt buộc</p>
-      <p *ngIf="editCustomerForm.controls.name.hasError('pattern') && editCustomerForm.controls.code.touched" >Tên khách hàng sai định dạng</p>
+      <p *ngIf="editCustomerForm.controls.name.hasError('required') && editCustomerForm.controls.name.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editCustomerForm.controls.name.hasError('pattern') && editCustomerForm.controls.name.touched" >Tên khách hàng sai định dạng</p>
     </div>
 
     <div class="form-outline my-2 col-4 mx-auto">
@@ -27,17 +27,17 @@
     </div>
 
     <div class="col-4 my-2 mx-auto">
-      <p *ngIf="editCustomerForm.controls.email.hasError('required') && editCustomerForm.controls.code.touched" >Trường này là bắt buộc</p>
-      <p *ngIf="editCustomerForm.controls.email.hasError('email') && editCustomerForm.controls.code.touched" >Email không đúng định dạng</p>
+      <p *ngIf="editCustomerForm.controls.email.hasError('required') && editCustomerForm.controls.email.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editCustomerForm.controls.email.hasError('email') && editCustomerForm.controls.email.touched" >Email không đúng định dạng</p>
     </div>
 
     <div class="form-outline my-2 col-4 mx-auto">
       <label class="form-label" >Ngày tháng năm sinh</label>
-      <input type="date" class="form-control" formControlName="dayOfBirth"/>
+      <input type="date" class="form-control" formControlName="birthday"/>
 
     </div>
     <div class="col-4 my-2 mx-auto">
-      <p *ngIf="editCustomerForm.controls.dayOfBirth.hasError('required') && editCustomerForm.controls.code.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editCustomerForm.controls.birthday.hasError('required') && editCustomerForm.controls.birthday.touched" >Trường này là bắt buộc</p>
     </div>
 
     <div class="form-outline my-2 col-4 mx-auto">
@@ -45,18 +45,18 @@
       <input type="text" class="form-control" formControlName="identify"/>
     </div>
     <div class="col-4 my-2 mx-auto">
-      <p *ngIf="editCustomerForm.controls.identify.hasError('required') && editCustomerForm.controls.code.touched" >Trường này là bắt buộc</p>
-      <p *ngIf="editCustomerForm.controls.identify.hasError('pattern') && editCustomerForm.controls.code.touched" >Không đúng định dạng giấy tờ tùy thân</p>
+      <p *ngIf="editCustomerForm.controls.identify.hasError('required') && editCustomerForm.controls.identify.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editCustomerForm.controls.identify.hasError('pattern') && editCustomerForm.controls.identify.touched" >Không đúng định dạng giấy tờ tùy thân</p>
     </div>
     <div class="form-outline my-2 col-4 mx-auto">
       <label class="form-label" >Số điện thoại liên hệ</label>
 
-      <input type="text" class="form-control" formControlName="phoneNumber"/>
+      <input type="text" class="form-control" formControlName="phone"/>
     </div>
 
     <div class="col-4 my-2 mx-auto">
-      <p *ngIf="editCustomerForm.controls.phoneNumber.hasError('required') && editCustomerForm.controls.code.touched" >Trường này là bắt buộc</p>
-      <p *ngIf="editCustomerForm.controls.phoneNumber.hasError('pattern') && editCustomerForm.controls.code.touched" >Sai định dạng Số điện thoại</p>
+      <p *ngIf="editCustomerForm.controls.phone.hasError('required') && editCustomerForm.controls.phone.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editCustomerForm.controls.phone.hasError('pattern') && editCustomerForm.controls.phone.touched" >Sai định dạng Số điện thoại</p>
     </div>
 
     <div class="form-outline my-2 col-4 mx-auto">
@@ -64,7 +64,7 @@
       <input type="text" id="address" class="form-control" formControlName="address"/>
     </div>
     <div class="col-4 my-2 mx-auto">
-      <p *ngIf="editCustomerForm.controls.address.hasError('required') && editCustomerForm.controls.code.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editCustomerForm.controls.address.hasError('required') && editCustomerForm.controls.address.touched" >Trường này là bắt buộc</p>
 
     </div>
     <div class="form-outline my-2 col-4 mx-auto">
@@ -75,16 +75,22 @@
       </select>
     </div>
     <div class="col-4 my-2 mx-auto">
-      <p *ngIf="editCustomerForm.controls.gender.hasError('required') && editCustomerForm.controls.code.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editCustomerForm.controls.gender.hasError('required') && editCustomerForm.controls.gender.touched" >Trường này là bắt buộc</p>
 
     </div>
     <div class="form-outline my-2 col-4 mx-auto" >
       <select id="typeCustomer"  class="form-control" formControlName="type">
         <option value="">--Loại khách hàng--</option>
+        <option value="Diamond">Diamond</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Platinum">Platinum</option>
+        <option value="Gold">Gold</option>
+        <option value="Silver">Silver</option>
+        <option value="Member">Member</option>
       </select>
     </div>
     <div class="col-4 my-2 mx-auto">
-      <p *ngIf="editCustomerForm.controls.type.hasError('required') && editCustomerForm.controls.code.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editCustomerForm.controls.type.hasError('required') && editCustomerForm.controls.type.touched" >Trường này là bắt buộc</p>
     </div>
     <div class="col-4 my-2 mx-auto">
       <input type="submit" id="register" value="Xác nhận chỉnh sửa" class="btn btn-secondary w-100">
