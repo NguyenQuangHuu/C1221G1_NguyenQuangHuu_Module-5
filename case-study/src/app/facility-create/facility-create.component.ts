@@ -11,7 +11,7 @@ export class FacilityCreateComponent implements OnInit {
   constructor() {
     this.facilityCreateFG = new FormGroup({
       id: new FormControl(0),
-      code: new FormControl('', [Validators.required, Validators.pattern('')]),
+      code: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required, Validators.pattern('' +
         '^(\\s?[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨ' +
         'ƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂ' +

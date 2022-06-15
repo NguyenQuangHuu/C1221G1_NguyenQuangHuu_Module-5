@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
-import {DictionaryService} from '../dictionary.service';
-import {IWord} from '../i-word';
+import {DictionaryService} from '../dictionary-page/dictionary.service';
+import {IWord} from '../dictionary-page/i-word';
 
 @Component({
   selector: 'app-dictionnary-detail',
