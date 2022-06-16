@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ContractService} from '../contract.service';
 import {CustomerService} from '../../customer/customer.service';
 import {FacilityService} from '../../facility/facility.service';
-import {Facility} from '../../facility/facility-list/facility';
+import {Facility} from '../../facility/facility';
 import {Customer} from '../../customer/customer';
 import {Router} from '@angular/router';
 
@@ -23,8 +23,12 @@ export class ContractCreateComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.facilities = this.facilityService.getAll();
-    this.customers = this.customerService.getAll();
+    this.facilityService.getAll().subscribe(
+      next => this.facilities = next
+    );
+    this.customerService.getAll().subscribe(
+      next => this.customers = next
+    );
     this.contractCreate = new FormGroup({
       id: new FormControl(''),
       startDate: new FormControl(''),
@@ -38,9 +42,12 @@ export class ContractCreateComponent implements OnInit {
   submitContract() {
     if (this.contractCreate.valid) {
       const contract = this.contractCreate.value;
-      this.contractService.addContract(contract);
-      this.contractCreate.reset();
-      this.route.navigateByUrl('/contract').then();
+      this.contractService.addContract(contract).subscribe(
+        next => {
+          this.contractCreate.reset();
+          this.route.navigateByUrl('/contract/list').then();
+        }
+      );
     }
   }
 }

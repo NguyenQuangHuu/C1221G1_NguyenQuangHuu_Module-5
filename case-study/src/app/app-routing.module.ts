@@ -20,28 +20,16 @@ const  routes: Routes = [
     path: 'home', component : HomepageComponent
   },
   {
-    path: 'facility', component: FacilityComponent
+    path: 'contract',
+    loadChildren: () => import('./contracts/contracts.module').then(module => module.ContractsModule)
   },
   {
-    path: 'facility-create', component : FacilityCreateComponent
+    path: 'customer',
+    loadChildren: () => import('./customer/customer.module').then(module => module.CustomerModule)
   },
   {
-    path: 'facility-edit/:id', component : FacilityEditComponent
-  },
-  {
-    path: 'customer', component : CustomerComponent
-  },
-  {
-    path: 'customer-create', component : CustomerCreateComponent
-  },
-  {
-    path: 'customer-edit/:id', component : CustomerEditComponent
-  },
-  {
-    path: 'contract', component: ContractComponent
-  },
-  {
-    path: 'contract-create', component: ContractCreateComponent
+    path: 'facility',
+    loadChildren: () => import('./facility/facility.module').then(module => module.FacilityModule)
   }
 ];
 @NgModule({

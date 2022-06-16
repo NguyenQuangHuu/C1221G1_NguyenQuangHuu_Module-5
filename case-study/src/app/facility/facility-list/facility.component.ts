@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Facility} from './facility';
+import {Facility} from '../facility';
 import {FacilityService} from '../facility.service';
 
 @Component({
@@ -15,7 +15,12 @@ export class FacilityComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.facilities = this.facilityService.getAll();
+    this.getAll();
+  }
+  getAll() {
+    this.facilityService.getAll().subscribe(
+      next => this.facilities = next
+    );
   }
 
   modalDelete(id: number, name: string) {

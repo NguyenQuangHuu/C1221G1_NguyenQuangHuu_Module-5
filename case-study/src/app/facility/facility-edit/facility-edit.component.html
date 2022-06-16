@@ -33,8 +33,15 @@
         <option value="HOUR">Giờ</option>
       </select>
     </div>
+    <div class="my-2">
+      <select class="form-control" formControlName="standard_room">
+        <option value="">Loại phòng</option>
+        <option value="VIP">Vip</option>
+        <option value="STANDARD">Standard</option>
+      </select>
+    </div>
     <div>
-      <p *ngIf="editFacilityForm.controls.rent_type.hasError('required') && editFacilityForm.controls.name.touched" >Trường này là bắt buộc</p>
+      <p *ngIf="editFacilityForm.controls.rent_type.hasError('required') && editFacilityForm.controls.rent_type.touched" >Trường này là bắt buộc</p>
     </div>
 
     <div class="form-outline my-2">
@@ -91,7 +98,7 @@
     </div>
     <div>
       <input class="btn btn-outline-warning mx-2" type="submit" value="Thêm mới">
-      <a class="btn btn-outline-danger mx-2" [routerLink]="['/']">Trở lại</a>
+      <a class="btn btn-outline-danger mx-2" [routerLink]="['/facility/list']">Trở lại</a>
     </div>
   </div>
 

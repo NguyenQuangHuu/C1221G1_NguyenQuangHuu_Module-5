@@ -3,7 +3,7 @@ import {Contract} from '../contract';
 import {ContractService} from '../contract.service';
 import {CustomerService} from '../../customer/customer.service';
 import {FacilityService} from '../../facility/facility.service';
-import {Facility} from '../../facility/facility-list/facility';
+import {Facility} from '../../facility/facility';
 import {Customer} from '../../customer/customer';
 
 @Component({
@@ -13,11 +13,15 @@ import {Customer} from '../../customer/customer';
 })
 export class ContractComponent implements OnInit {
   contracts: Contract[] = [];
-
+  p = 1;
   constructor(private contractService: ContractService) { }
 
   ngOnInit(): void {
-    this.contracts = this.contractService.getAll();
+    this.getAll();
   }
-
+  getAll() {
+    this.contractService.getAll().subscribe(
+      next => this.contracts = next
+    );
+  }
 }

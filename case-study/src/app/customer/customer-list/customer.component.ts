@@ -14,7 +14,12 @@ export class CustomerComponent implements OnInit {
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
-    this.customers = this.customerService.customerList;
+    this.getAll();
+  }
+  getAll() {
+    this.customerService.getAll().subscribe(
+      next => this.customers = next
+    );
   }
 
   deleteModal(id: number) {

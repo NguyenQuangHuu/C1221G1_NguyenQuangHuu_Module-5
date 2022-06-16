@@ -12,7 +12,7 @@ export class FacilityCreateComponent implements OnInit {
   facilityCreateFG: FormGroup;
   constructor(private facilityService: FacilityService, private route: Router) {
     this.facilityCreateFG = new FormGroup({
-      id: new FormControl(1),
+      id: new FormControl(),
       code: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required, Validators.pattern('' +
         '^(\\s?[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨ' +
@@ -35,11 +35,17 @@ export class FacilityCreateComponent implements OnInit {
   ngOnInit(): void {
   }
   facilityCreateSubmit() {
+    console.log(this.facilityCreateFG.valid);
+    console.log(this.facilityCreateFG);
+    if (this.facilityCreateFG.valid) {
 
       const facility = this.facilityCreateFG.value;
-      this.facilityService.addFacility(facility);
-      this.facilityCreateFG.reset();
-      this.route.navigateByUrl('/facility').then();
-
+      this.facilityService.addFacility(facility).subscribe(
+        next => {
+          this.facilityCreateFG.reset();
+          this.route.navigateByUrl('/facility/list').then();
+        }
+      );
+    }
   }
 }

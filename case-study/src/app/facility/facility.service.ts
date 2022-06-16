@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Facility} from './facility-list/facility';
-
+import {Facility} from './facility';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
+const API_URL = `${environment.apiUrl}`;
 @Injectable({
   providedIn: 'root'
 })
@@ -91,38 +94,22 @@ export class FacilityService {
       img: 'room6.jpg'
     },
   ];
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAll(): Facility[] {
-    return this.facilityList;
+  getAll(): Observable<Facility[]> {
+    return this.http.get<Facility[]>(`${API_URL}/facilities`);
   }
 
-  addFacility(facility: Facility) {
-    let count = 1;
-    this.facilityList.forEach(
-      // tslint:disable-next-line:no-shadowed-variable
-      facility => {
-        if (facility.id === count) {
-          count++;
-        }
-      }
-    );
-    facility.id = count;
-    console.log(facility);
-    this.facilityList.push(facility);
+  addFacility(facility: Facility): Observable<Facility> {
+    return this.http.post<Facility>(`${API_URL}/facilities`, facility);
   }
 
-  findById(id: number): Facility {
-    const list = this.facilityList.filter((customer) => customer.id === id);
-    return list[0];
+  findById(id: number): Observable<Facility> {
+    return this.http.get<Facility>(`${API_URL}/facilities/${id}`);
   }
 
-  update(facility: Facility) {
-    for (const k in this.facilityList) {
-      if (this.facilityList[k].id === facility.id) {
-        this.facilityList[k] = facility;
-      }
-    }
+  update(id: number, facility: Facility): Observable<Facility> {
+    return this.http.patch<Facility>(`${API_URL}/facilities/${id}`, facility);
   }
 
   remove(facility: Facility) {

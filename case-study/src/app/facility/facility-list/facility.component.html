@@ -5,7 +5,7 @@
 <!-- end header inner -->
 <!-- end header -->
 <div class="text-center">
-  <a [routerLink]="['/facility-create']" class="btn btn-success my-2">
+  <a [routerLink]="['/facility/create']" class="btn btn-success my-2">
     Thêm mới dịch vụ
   </a>
 </div>
@@ -33,7 +33,7 @@
             <span>{{facility.convenience}}</span>
           </div>
           <div class="pb-2">
-            <a class="btn btn-outline-info mx-2" [routerLink]="['/facility-edit',facility.id]">Edit</a>
+            <a class="btn btn-outline-info mx-2" [routerLink]="['/facility/edit',facility.id]">Edit</a>
             <button type="button" class="btn btn-outline-danger mx-2" data-toggle="modal" data-target="#exampleModal" (click)="modalDelete(facility.id,facility.name)">
               Delete
             </button>
