@@ -1,12 +1,13 @@
 import {AfterContentInit, Component, ContentChildren, OnInit, QueryList} from '@angular/core';
+import {ImgSlideComponent} from './img-slide/img-slide.component';
 
 @Component({
   selector: 'app-img-slider',
   templateUrl: './img-slider.component.html',
-  styleUrls: ['./img-slider.component.css']
+  styleUrls: ['./img-slider.component.scss']
 })
 export class ImgSliderComponent implements OnInit, AfterContentInit {
-  @ContentChildren(ImgSliderComponent) slides: QueryList<ImgSliderComponent>;
+  @ContentChildren(ImgSlideComponent) slides: QueryList<ImgSlideComponent>;
   component;
   activeIndex = 0;
   constructor() { }
