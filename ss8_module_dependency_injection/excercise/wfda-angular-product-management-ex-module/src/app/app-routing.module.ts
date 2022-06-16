@@ -8,10 +8,10 @@ import {CategoryModule} from './category/category.module';
 
 const routes: Routes = [
   {
-    path: 'product', component : ProductComponent, loadChildren: () => ProductModule
+    path: 'product', loadChildren: () => import('./product/product.module').then(module => module.ProductModule)
   },
   {
-    path: 'category', component : CategoryComponent, loadChildren: () => CategoryModule
+    path: 'category', loadChildren: () => import('./category/category.module').then(module => module.CategoryModule)
   }
 ];
 
