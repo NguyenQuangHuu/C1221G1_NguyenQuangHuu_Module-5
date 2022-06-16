@@ -16,7 +16,12 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.facilities = this.service.getAll();
+   this.getAll();
+  }
+  getAll() {
+    this.service.getAll().subscribe(
+      next => this.facilities = next
+    );
   }
 
 }

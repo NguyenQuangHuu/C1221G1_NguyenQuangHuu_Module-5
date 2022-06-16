@@ -178,7 +178,7 @@
       "identify": "123456789",
       "address": "Đà Nẵng",
       "email": "khachhanga@gmail.com",
-      "gender": 0,
+      "gender": "1",
       "type": "Diamond"
     },
     {
@@ -186,12 +186,12 @@
       "code": "KH-0001",
       "name": "Khách hàng A",
       "birthday": "2000-01-01",
-      "phone": "0123456789",
+      "phone": "0901198999",
       "identify": "123456789",
       "address": "Đà Nẵng",
       "email": "khachhanga@gmail.com",
-      "gender": 0,
-      "type": "Diamond"
+      "gender": "1",
+      "type": "Ruby"
     }
   ],
   "facilities": [
@@ -209,36 +209,6 @@
       "standard_room": "VIP",
       "rent_type": "DAY",
       "img": "room6.jpg"
-    },
-    {
-      "id": 2,
-      "code": "VL-1234",
-      "name": "House Dành cho Bạn",
-      "usable": "3000",
-      "price": 45000,
-      "type": "VIP",
-      "convenience": "Cám chim",
-      "floor": "40",
-      "capacity": 10,
-      "pool_usable": "20000",
-      "standard_room": "VIP",
-      "rent_type": "DAY",
-      "img": "room5.jpg"
-    },
-    {
-      "id": 3,
-      "code": "DV-9999",
-      "name": "Nhà sạch",
-      "type": "VIP",
-      "convenience": "Không",
-      "usable": "3000000",
-      "price": "30000",
-      "floor": "3",
-      "capacity": "30",
-      "pool_usable": "30000",
-      "standard_room": "VIP",
-      "rent_type": "DAYS",
-      "img": "room1.jpg"
     }
   ]
 }

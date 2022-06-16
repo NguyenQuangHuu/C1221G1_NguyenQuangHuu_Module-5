@@ -45,7 +45,7 @@ export class ContractCreateComponent implements OnInit {
       this.contractService.addContract(contract).subscribe(
         next => {
           this.contractCreate.reset();
-          this.route.navigateByUrl('/contract/list').then();
+          this.route.navigateByUrl('/contract-list/list').then();
         }
       );
     }

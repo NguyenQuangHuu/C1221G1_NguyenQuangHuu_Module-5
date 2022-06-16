@@ -1,37 +1,27 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AppComponent } from './app.component';
-import { FacilityComponent } from './facility/facility-list/facility.component';
-import { CustomerComponent } from './customer/customer-list/customer.component';
-import { ContractComponent } from './contracts/contract/contract.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { FacilityCreateComponent } from './facility/facility-create/facility-create.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
-import { FacilityEditComponent } from './facility/facility-edit/facility-edit.component';
-import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
-import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
-import { ContractCreateComponent } from './contracts/contract-create/contract-create.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import {HomepageComponent} from './homepage/homepage.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+// @ts-ignore
+import {NgxPaginationModule} from 'ngx-pagination';
+import {ContractsComponent} from './contracts/contracts.component';
+import {ContractsModule} from './contracts/contracts.module';
+import {HeaderComponent} from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
+import {CustomerModule} from './customer/customer.module';
+import {FacilityModule} from './facility/facility.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FacilityComponent,
-    CustomerComponent,
-    ContractComponent,
     HeaderComponent,
     FooterComponent,
-    FacilityCreateComponent,
-    FacilityEditComponent,
-    CustomerCreateComponent,
-    CustomerEditComponent,
-    ContractCreateComponent,
-    HomepageComponent
+    HomepageComponent,
   ],
     imports: [
         BrowserModule,
@@ -40,6 +30,9 @@ import {HttpClientModule} from '@angular/common/http';
         AppRoutingModule,
         ReactiveFormsModule,
         HttpClientModule,
+        ContractsModule,
+        CustomerModule,
+        FacilityModule
     ],
   providers: [],
   bootstrap: [AppComponent]

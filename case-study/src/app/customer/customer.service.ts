@@ -67,39 +67,20 @@ export class CustomerService {
     return this.http.get<Customer[]>(`${API_URL}/customers`);
   }
 
-  addCustomer(customer: Customer): void {
-    let count = 1;
-    for (const k in this.customerList) {
-      if (count === this.customerList[k].id) {
-        count++;
-      }
-    }
-    customer.id = count;
-    this.customerList.push(customer);
+  addCustomer(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(`${API_URL}/customers`, customer);
   }
 
-  findById(id: number): Customer {
-    let cus: Customer;
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.customerList.length; i++) {
-      if (this.customerList[i].id === id) {
-        cus = this.customerList[i];
-      }
-    }
-    return cus;
+  findById(id: number): Observable<Customer> {
+    return this.http.get<Customer>(`${API_URL}/customers/${id}`);
   }
 
-  edit(customer: Customer) {
-    console.log(customer);
-    for (let i = 0; i < this.customerList.length; i++) {
-      if (customer.id === this.customerList[i].id) {
-        this.customerList[i] = customer;
-      }
-    }
+  edit(id: number, customer: Customer): Observable<Customer> {
+    return this.http.patch(`${API_URL}/customers/${id}`, customer);
   }
 
 
-  delete(customer: Customer) {
-    this.customerList = this.customerList.filter( cus => cus.id !== customer.id);
+  delete(id: number): Observable<Customer> {
+    return this.http.delete(`${API_URL}/customers/${id}`);
   }
 }

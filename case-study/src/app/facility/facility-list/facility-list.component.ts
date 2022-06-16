@@ -4,10 +4,10 @@ import {FacilityService} from '../facility.service';
 
 @Component({
   selector: 'app-facility',
-  templateUrl: './facility.component.html',
-  styleUrls: ['./facility.component.css']
+  templateUrl: './facility-list.component.html',
+  styleUrls: ['./facility-list.component.css']
 })
-export class FacilityComponent implements OnInit {
+export class FacilityListComponent implements OnInit {
   facilities: Facility[] = [];
   modalId: number;
   modalName: string;
@@ -29,10 +29,15 @@ export class FacilityComponent implements OnInit {
   }
 
   delete(modalId: number) {
-    const facility = this.facilityService.findById(modalId);
-    if(facility !== null){
-      this.facilityService.remove(facility);
-    }
-    this.ngOnInit();
+    this.facilityService.findById(modalId).subscribe(
+      next => {
+        this.facilityService.remove(next.id).subscribe(
+         n => {
+           this.ngOnInit();
+           alert('Xoa thanh cong');
+         }
+        );
+      }
+    );
   }
 }

@@ -30,10 +30,16 @@ export class CustomerCreateComponent implements OnInit {
   }
 
   onCustomerSubmit() {
-    console.log(this.customerFormGroup.value);
-    const customer = this.customerFormGroup.value;
-    this.customerService.addCustomer(customer);
-    this.customerFormGroup.reset();
-    this.route.navigateByUrl('/customer').then();
+    console.log(this.customerFormGroup.valid);
+    console.log(this.customerFormGroup);
+    if (this.customerFormGroup.valid) {
+      const customer = this.customerFormGroup.value;
+      this.customerService.addCustomer(customer).subscribe(
+        next => {
+          this.customerFormGroup.reset();
+          this.route.navigateByUrl('/customer/list').then();
+        }
+      );
+    }
   }
 }

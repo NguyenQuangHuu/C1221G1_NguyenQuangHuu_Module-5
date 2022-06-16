@@ -2,7 +2,7 @@
   <!-- Tab content -->
 
   <h4 class="text-secondary text-center my-2 h3">Danh sách hợp đồng</h4>
-  <a [routerLink]="['/contract/create']" class="btn btn-outline-success m-2">Tạo hợp đồng mới</a>
+  <a [routerLink]="['/contract-list/create']" class="btn btn-outline-success m-2">Tạo hợp đồng mới</a>
   <!--    <form method="get">-->
   <!--    <div class="row">-->
 
@@ -51,7 +51,7 @@
         <!--                    <a class="btn btn-danger" th:href="@{/customers/delete/{id}(id=${customer-list.id})}">Delete</a>-->
       </td>
     </tr>
-    <tr *ngFor="let contract of contracts">
+    <tr *ngFor="let contract of contracts | paginate: { itemsPerPage: 3, currentPage: p }">
       <td >{{contract.id}}</td>
       <td>{{contract.startDate}}</td>
       <td >{{contract.endDate}}</td>
