@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {Customer} from '../customer';
 import {CustomerService} from '../customer.service';
 import {Router} from '@angular/router';
+import {filter, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-customer',
@@ -9,19 +10,22 @@ import {Router} from '@angular/router';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-  customers: Customer[] = [];
+  customers: Customer[];
   idModal: number;
   nameModal: string;
   constructor(private customerService: CustomerService, private route: Router) { }
 
   ngOnInit(): void {
-    this.getAll();
-  }
-  getAll() {
     this.customerService.getAll().subscribe(
-      next => this.customers = next
+      customer => {
+        // @ts-ignore
+        this.customers = customer.content;
+      }
     );
   }
+  // getAll() {
+  //
+  // }
 
   deleteModal(id: number) {
     this.customerService.findById(id).subscribe(
@@ -29,7 +33,6 @@ export class CustomerListComponent implements OnInit {
         this.customerService.delete(next.id).subscribe(
           success => {
             this.ngOnInit();
-            this.route.navigateByUrl('/customer/list').then();
             alert('Xoa thanh cong');
           },
           error => {
@@ -39,7 +42,6 @@ export class CustomerListComponent implements OnInit {
       }
     );
   }
-
   modal(id: number, name: string) {
     this.idModal = id;
     this.nameModal = name;

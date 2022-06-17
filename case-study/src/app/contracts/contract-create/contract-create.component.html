@@ -42,7 +42,7 @@
     <div class="form-outline my-2 col-4 mx-auto" >
       <select id="typeCustomer"  class="form-control" formControlName="customer" >
         <option value="">--Tên khách hàng đặt phòng--</option>
-        <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.name}} - {{customer.identify}} - {{customer.code}}</option>
+        <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.name}} - {{customer.card}} - {{customer.code}}</option>
       </select>
     </div>
     <div class="my-2 col-4 mx-auto">

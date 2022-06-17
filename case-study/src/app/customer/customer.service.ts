@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {Customer} from './customer';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../environments/environment';
+const API_URL = 'http://localhost:8080';
 
-const API_URL = `${environment.apiUrl}`;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -59,28 +59,27 @@ export class CustomerService {
     //   type: 'Diamond'
     // }
   ];
-
   constructor(private http: HttpClient) {
   }
 
   getAll(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(`${API_URL}/customers`);
+    return this.http.get<Customer[]>(`${API_URL}/api/customers/`);
   }
 
   addCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(`${API_URL}/customers`, customer);
+    return this.http.post<Customer>(`${API_URL}/api/customers/add`, customer);
   }
 
   findById(id: number): Observable<Customer> {
-    return this.http.get<Customer>(`${API_URL}/customers/${id}`);
+    return this.http.get<Customer>(`${API_URL}/api/customers/${id}`);
   }
 
-  edit(id: number, customer: Customer): Observable<Customer> {
-    return this.http.patch(`${API_URL}/customers/${id}`, customer);
+  edit(id: number , customer: Customer): Observable<Customer> {
+    return this.http.patch(`${API_URL}/api/customers/edit/${id}`, customer);
   }
 
 
   delete(id: number): Observable<Customer> {
-    return this.http.delete(`${API_URL}/customers/${id}`);
+    return this.http.delete(`${API_URL}/api/customers/delete/${id}`);
   }
 }

@@ -4,9 +4,9 @@ export interface Customer {
   name?: string;
   birthday?: string;
   phone?: string;
-  identify?: string;
+  card?: string;
   address?: string;
   email?: string;
   gender?: number;
-  type?: string;
+  customerType?: string;
 }
