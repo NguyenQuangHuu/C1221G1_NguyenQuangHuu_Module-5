@@ -166,6 +166,114 @@
         "rent_type": "DAY",
         "img": "room6.jpg"
       }
+    },
+    {
+      "id": 6,
+      "startDate": "",
+      "endDate": "",
+      "deposit": "3333",
+      "customer": {
+        "id": 1,
+        "code": "KH-0001",
+        "name": "Nguyễn Thị Hào",
+        "birthday": "1970-11-07",
+        "gender": 1,
+        "card": "643431213",
+        "phone": "0945423362",
+        "email": "thihao07@gmail.com",
+        "address": "23 Nguyễn Hoàng, Đà Nẵng",
+        "customerType": {
+          "id": 1,
+          "name": "Diamond"
+        }
+      },
+      "service": {
+        "id": 1,
+        "code": "DV-9999",
+        "name": "House 4 U",
+        "usable": 43000,
+        "price": 30,
+        "type": "VIP",
+        "convenience": "Cám chim",
+        "floor": 4,
+        "capacity": 10,
+        "pool_usable": 20,
+        "standard_room": "VIP",
+        "rent_type": "DAY",
+        "img": "room6.jpg"
+      }
+    },
+    {
+      "id": 7,
+      "startDate": "2022-06-16",
+      "endDate": "2022-06-23",
+      "deposit": "333",
+      "customer": {
+        "id": 1,
+        "code": "KH-0001",
+        "name": "Nguyễn Thị Hào",
+        "birthday": "1970-11-07",
+        "gender": 1,
+        "card": "643431213",
+        "phone": "0945423362",
+        "email": "thihao07@gmail.com",
+        "address": "23 Nguyễn Hoàng, Đà Nẵng",
+        "customerType": {
+          "id": 1,
+          "name": "Diamond"
+        }
+      },
+      "service": {
+        "id": 1,
+        "code": "DV-9999",
+        "name": "House 4 U",
+        "usable": 43000,
+        "price": 30,
+        "type": "VIP",
+        "convenience": "Cám chim",
+        "floor": 4,
+        "capacity": 10,
+        "pool_usable": 20,
+        "standard_room": "VIP",
+        "rent_type": "DAY",
+        "img": "room6.jpg"
+      }
+    },
+    {
+      "id": 8,
+      "startDate": "2022-06-03",
+      "endDate": "2022-06-02",
+      "deposit": "300000",
+      "customer": {
+        "id": 1,
+        "code": "KH-0001",
+        "name": "Nguyễn Thị Hào",
+        "birthday": "1970-11-07",
+        "gender": 1,
+        "card": "643431213",
+        "phone": "0945423362",
+        "email": "thihao07@gmail.com",
+        "address": "23 Nguyễn Hoàng, Đà Nẵng",
+        "customerType": {
+          "id": 1,
+          "name": "Diamond"
+        }
+      },
+      "service": {
+        "id": 1,
+        "code": "DV-9999",
+        "name": "House 4 U",
+        "usable": 43000,
+        "price": 30,
+        "type": "VIP",
+        "convenience": "Cám chim",
+        "floor": 4,
+        "capacity": 10,
+        "pool_usable": 20,
+        "standard_room": "VIP",
+        "rent_type": "DAY",
+        "img": "room6.jpg"
+      }
     }
   ],
   "customers": [

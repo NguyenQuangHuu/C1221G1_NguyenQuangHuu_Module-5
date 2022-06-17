@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <!-- Tab content -->
 
-  <h4 class="text-secondary text-center my-2 h3">Danh sách hợp đồng</h4>
-  <a [routerLink]="['/contract-list/create']" class="btn btn-outline-success m-2">Tạo hợp đồng mới</a>
+  <h4 class="text-secondary text-center my-2 h3">Contract List</h4>
+  <a [routerLink]="['/contract/create']" class="btn btn-outline-success m-2">New Contract</a>
   <!--    <form method="get">-->
   <!--    <div class="row">-->
 
@@ -34,23 +34,23 @@
     </tr>
     </thead>
     <tbody id="fetchData">
-    <tr >
-      <td >0</td>
-      <td>12/12/2022</td>
-      <td >12/12/2022</td>
-      <td >30000</td>
-      <td >400000</td>
-      <td>Khách hàng B</td>
-      <td>Dịch vụ C</td>
-      <td >
-        <button
-          type="button" class="btn btn-detail"
-          data-mdb-toggle="modal" data-mdb-target="#exampleModal">Thêm dịch vụ đi kèm
-        </button>
-        <button type="button" class="btn btn-detail">Chi tiết hợp đồng</button>
-        <!--                    <a class="btn btn-danger" th:href="@{/customers/delete/{id}(id=${customer-list.id})}">Delete</a>-->
-      </td>
-    </tr>
+<!--    <tr >-->
+<!--      <td >0</td>-->
+<!--      <td>12/12/2022</td>-->
+<!--      <td >12/12/2022</td>-->
+<!--      <td >30000</td>-->
+<!--      <td >400000</td>-->
+<!--      <td>Khách hàng B</td>-->
+<!--      <td>Dịch vụ C</td>-->
+<!--      <td >-->
+<!--        <button-->
+<!--          type="button" class="btn btn-detail"-->
+<!--          data-mdb-toggle="modal" data-mdb-target="#exampleModal">Thêm dịch vụ đi kèm-->
+<!--        </button>-->
+<!--        <button type="button" class="btn btn-detail">Chi tiết hợp đồng</button>-->
+<!--        &lt;!&ndash;                    <a class="btn btn-danger" th:href="@{/customers/delete/{id}(id=${customer-list.id})}">Delete</a>&ndash;&gt;-->
+<!--      </td>-->
+<!--    </tr>-->
     <tr *ngFor="let contract of contracts | paginate: { itemsPerPage: 3, currentPage: p }">
       <td >{{contract.id}}</td>
       <td>{{contract.startDate}}</td>
@@ -62,9 +62,9 @@
       <td >
         <button
           type="button" class="btn btn-outline-info mx-2"
-          data-mdb-toggle="modal" data-mdb-target="#exampleModal">Thêm dịch vụ đi kèm
+          data-mdb-toggle="modal" data-mdb-target="#exampleModal">Adding attach service
         </button>
-        <button type="button" class="btn btn-outline-danger mx-2" data-toggle="modal" data-target="#exampleModal">Chi tiết hợp đồng</button>
+        <button type="button" class="btn btn-outline-danger mx-2" data-toggle="modal" data-target="#exampleModal">Contract Detail</button>
         <!--                    <a class="btn btn-danger" th:href="@{/customers/delete/{id}(id=${customer-list.id})}">Delete</a>-->
       </td>
     </tr>
@@ -89,7 +89,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Delete Confirm Menu</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -99,7 +99,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Keeps Delete</button>
       </div>
     </div>
   </div>

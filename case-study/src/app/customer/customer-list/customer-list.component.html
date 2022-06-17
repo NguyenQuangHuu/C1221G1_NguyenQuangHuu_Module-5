@@ -71,7 +71,8 @@
       <td id="action">
         <a class="btn btn-outline-info mx-2" [routerLink]="['/customer/edit',customer.id]">Edit</a>
 
-        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" (click)="modal(customer.id, customer.name)">
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"
+                (click)="modal(customer.id, customer.name)">
           Delete
         </button>
         <!--                    <a class="btn btn-danger" th:href="@{/customers/delete/{id}(id=${customer-list.id})}">Delete</a>-->

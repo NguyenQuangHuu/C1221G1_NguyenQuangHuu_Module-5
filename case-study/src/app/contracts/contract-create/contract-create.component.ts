@@ -24,10 +24,17 @@ export class ContractCreateComponent implements OnInit {
   }
   ngOnInit(): void {
     this.facilityService.getAll().subscribe(
-      next => this.facilities = next
+      next => {
+        this.facilities = next;
+        console.log(next);
+      }
     );
     this.customerService.getAll().subscribe(
-      next => this.customers = next
+      next => {
+        // @ts-ignore
+        this.customers = next.content;
+        console.log(next);
+      }
     );
     this.contractCreate = new FormGroup({
       id: new FormControl(''),
@@ -45,7 +52,7 @@ export class ContractCreateComponent implements OnInit {
       this.contractService.addContract(contract).subscribe(
         next => {
           this.contractCreate.reset();
-          this.route.navigateByUrl('/contract-list/list').then();
+          this.route.navigateByUrl('/contract/list').then();
         }
       );
     }
