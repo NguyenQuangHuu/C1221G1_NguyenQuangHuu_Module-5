@@ -1,0 +1,91 @@
+<!--<div class="card" style="width: 18rem;">-->
+<!--  <img src="..." class="card-img-top" alt="...">-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Card title</h5>-->
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="row g-3 mx-2">
+  <div class="col-4">
+
+    <input type="text" class="form-control" id="staticEmail2" placeholder="Tìm kiếm theo loại xe">
+  </div>
+  <div class="col-4">
+
+    <input type="text" class="form-control" id="inputPassword2" placeholder="Tìm kiếm theo nhà xe">
+  </div>
+  <div class="col-3">
+
+    <select name="" id="inputPassword3" class="form-select">
+      <option value="">---Nơi đến---</option>
+    </select>
+  </div>
+  <div class="col-1">
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+  </div>
+</div>
+<table class="table caption-top w-75 mx-auto">
+  <caption class="text-center h3 text-secondary">Danh sách chuyến đi</caption>
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Số xe</th>
+    <th scope="col">Loại xe</th>
+    <th scope="col">Tên nhà xe</th>
+    <th scope="col">Điểm đi</th>
+    <th scope="col">Điểm đến</th>
+    <th scope="col">Số điện thoại</th>
+    <th scope="col">Email</th>
+    <th scope="col">Giờ đi</th>
+    <th scope="col">Giờ đến</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of vehicleList">
+    <td>{{item.id}}</td>
+    <td>{{item.numberPlate}}</td>
+    <td>{{item.types.name}}</td>
+    <td>{{item.coachStation.name}}</td>
+    <td>{{item.startSpot}}</td>
+    <td>{{item.stopSpot}}</td>
+    <td>{{item.phoneNumber}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.startTime}}</td>
+    <td>{{item.stopTime}}</td>
+    <td>
+      <a class="btn btn-info mx-1" [routerLink]="['/item/edit',item.id]">Sửa</a>
+      <button type="button" (click)="modal(item.id, item.numberPlate)" class="btn btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Xóa
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-around">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xác Nhận</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn có đồng ỹ xóa thông tin của xe khách có số xe {{nameModal}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+        <button type="button" class="btn btn-primary" (click)="deleteModal(idModal)" data-bs-dismiss="modal">Có</button>
+      </div>
+    </div>
+  </div>
+</div>

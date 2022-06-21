@@ -1,0 +1,76 @@
+{
+  "vehicles": [
+    {
+      "id": 1,
+      "bienSo": "1231",
+      "loaiXe": {
+        "id": 3,
+        "name": "Sơn Tùng"
+      },
+      "tenNhaXe": {
+        "id": 2,
+        "name": "Ghế ngồi"
+      },
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Quảng Trị",
+      "soDienThoai": "0901231233",
+      "email": "mailinh@gmail.commm",
+      "gioDi": "13:20",
+      "gioDen": "15:30"
+    },
+    {
+      "id": 2,
+      "bienSo": "1222",
+      "loaiXe": {
+        "id": 2,
+        "name": "Ghế ngồi"
+      },
+      "tenNhaXe": {
+        "id": 3,
+        "name": "Sơn Tùng"
+      },
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Quảng Trị",
+      "soDienThoai": "0939574122",
+      "email": "hoanglong@gmail.com",
+      "gioDi": "10:20",
+      "gioDen": "13:00"
+    }
+  ],
+  "vehicle-type": [
+    {
+      "id": 1,
+      "name": "Giường nằm"
+    },
+    {
+      "id": 2,
+      "name": "Ghế ngồi"
+    },
+    {
+      "id": 3,
+      "name": "Giường nằm điều hòa"
+    },
+    {
+      "id": 4,
+      "name": "Ghế ngồi điều hòa"
+    }
+  ],
+  "coach-station": [
+    {
+      "id": 1,
+      "name": "Phương Trang"
+    },
+    {
+      "id": 2,
+      "name": "Hoàng Long"
+    },
+    {
+      "id": 3,
+      "name": "Sơn Tùng"
+    },
+    {
+      "id": 4,
+      "name": "Thành Long"
+    }
+  ]
+}

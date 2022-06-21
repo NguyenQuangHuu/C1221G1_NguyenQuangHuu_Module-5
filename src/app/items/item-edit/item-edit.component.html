@@ -1,0 +1,101 @@
+<h3 class="text-center">Chỉnh sửa thông tin xe khách có số xe {{vehicle.numberPlate}}</h3>
+<form [formGroup]="editForm" (ngSubmit)="submitEdit()">
+  <div class="w-50 mx-auto">
+    <div class="mb-3">
+      <input type="hidden" class="form-control" formControlName="id">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Biển số xe</label>
+      <input type="text" readonly class="form-control" formControlName="numberPlate">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Loại xe</label>
+      <select formControlName="types" class="form-select" [compareWith]="compareFn">
+        <option value="">--Loại Xe--</option>
+        <option [ngValue]="c" *ngFor="let c of vehicleTypes">{{c.name}}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <p style="color: red" *ngIf="editForm.controls.numberPlate.hasError('required')
+      && editForm.controls.numberPlate.touched">Không được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Tên nhà xe</label>
+      <select formControlName="coachStation" class="form-select" [compareWith]="compareFn">
+        <option value="">--Nhà Xe--</option>
+        <option [ngValue]="t" *ngFor="let t of coachStation">{{t.name}}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <p style="color: red" *ngIf="editForm.controls.coachStation.hasError('required')
+     && editForm.controls.coachStation.touched">Không được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Điểm đi</label>
+      <select formControlName="startSpot" class="form-select" [compareWith]="compareFn">
+        <option value="">--Điểm đi--</option>
+        <option value="Đà Nẵng">Đà Nẵng</option>
+        <option value="Quảng Trị">Quảng Trị</option>
+        <option value="Quảng Nam">Quảng Nam</option>
+        <option value="Quảng Ngãi">Quảng Ngãi</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <p style="color: red" *ngIf="editForm.controls.startSpot.hasError('required')
+ && editForm.controls.startSpot.touched">Không được để trống</p>
+    </div>
+    <div>
+      <label class="form-label">Điểm đến</label>
+      <select class="form-select" formControlName="stopSpot" [compareWith]="compareFn">
+        <option value="">--Điểm đến--</option>
+        <option value="Đà Nẵng">Đà Nẵng</option>
+        <option value="Quảng Trị">Quảng Trị</option>
+        <option value="Quảng Nam">Quảng Nam</option>
+        <option value="Quảng Ngãi">Quảng Ngãi</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <p style="color: red" *ngIf="editForm.controls.stopSpot.hasError('required')
+ && editForm.controls.stopSpot.touched">Không được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Số điện thoại</label>
+      <input type="text" class="form-control" formControlName="phoneNumber">
+    </div>
+    <div class="mb-3">
+      <p style="color: red" *ngIf="editForm.controls.phoneNumber.hasError('required')
+        && editForm.controls.phoneNumber.touched">Không được để trống</p>
+      <p style="color: red" *ngIf="editForm.controls.phoneNumber.hasError('pattern')
+  && editForm.controls.phoneNumber.touched">Sai định dạng số</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="mb-3">
+      <p style="color: red" *ngIf="editForm.controls.email.hasError('required')
+     && editForm.controls.email.touched">Không được để trống</p>
+      <p style="color: red" *ngIf="editForm.controls.email.hasError('email')
+    && editForm.controls.email.touched">Không đúng định dạng email</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Giờ đi</label>
+      <input type="time" class="form-control" formControlName="startTime">
+    </div>
+    <div class="mb-3">
+      <p style="color: red" *ngIf="editForm.controls.startTime.hasError('required')">Không được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Giờ đến</label>
+      <input type="time" class="form-control" formControlName="stopTime">
+    </div>
+    <div class="mb-3">
+      <p style="color: red" *ngIf="editForm.controls.stopTime.hasError('required')">Không được để trống</p>
+    </div>
+    <div class="row">
+      <a type="button" class="btn btn-outline-primary mb-2" [routerLink]="['/item/list']">Quay về</a>
+      <input type="submit" class="btn btn-success" value="Sửa">
+    </div>
+
+  </div>
+</form>
