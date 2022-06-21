@@ -7,7 +7,8 @@
       <input type="date" id="name" class="form-control" formControlName="startDate"/>
     </div>
     <div class="my-2 col-4 mx-auto">
-      <p *ngIf="contractCreate.controls.startDate.hasError('required') && contractCreate.controls.startDate.touched" ></p>
+      <p *ngIf="contractCreate.controls.startDate.hasError('required') && contractCreate.controls.startDate.touched" >Không bỏ trống</p>
+      <p *ngIf="contractCreate.hasError('pastDate') && contractCreate.controls.startDate.touched" >Không chọn ngày quá khứ</p>
     </div>
 
     <div class="form-outline my-2 col-4 mx-auto">
@@ -16,7 +17,10 @@
 
     </div>
     <div class="my-2 col-4 mx-auto">
-      <p *ngIf="contractCreate.controls.endDate.hasError('required') && contractCreate.controls.endDate.touched" ></p>
+      <p *ngIf="contractCreate.controls.endDate.hasError('required') && contractCreate.controls.endDate.touched" >Không bỏ trống</p>
+      <p *ngIf="contractCreate.hasError('pastEndDate') && contractCreate.controls.endDate.touched" >Không chọn ngày quá khứ</p>
+      <p *ngIf="contractCreate.hasError('validDate')&& contractCreate.controls.endDate.touched" >Không chọn ngày trước ngày đặt phòng</p>
+      <p *ngIf="contractCreate.hasError('noStartDate')&& contractCreate.controls.endDate.touched" >Chưa có ngày đặt phòng</p>
     </div>
     <div class="form-outline my-2 col-4 mx-auto">
       <label class="form-label" for="deposit">Deposit</label>
