@@ -15,4 +15,6 @@ public interface IVehicleService {
     void updateVehicle(Vehicle vehicle, VehicleDto vehicleDto);
 
     void deleteById(Vehicle vehicle);
+
+    Page<Vehicle> search(String startTime, String spot, Pageable pageable);
 }

@@ -42,4 +42,9 @@ public class VehicleService implements IVehicleService {
     public void deleteById(Vehicle vehicle) {
         this.iVehicleRepository.delete(vehicle);
     }
+
+    @Override
+    public Page<Vehicle> search(String startTime,String spot, Pageable pageable) {
+        return this.iVehicleRepository.findAllByStartTimeContainingAndStopSpotContaining(startTime,spot, pageable);
+    }
 }

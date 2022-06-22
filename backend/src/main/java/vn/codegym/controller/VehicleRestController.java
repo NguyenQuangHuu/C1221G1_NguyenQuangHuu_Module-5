@@ -10,6 +10,8 @@ import vn.codegym.dto.VehicleDto;
 import vn.codegym.model.Vehicle;
 import vn.codegym.service.IVehicleService;
 
+import java.util.Optional;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/vehicles")
@@ -19,7 +21,16 @@ public class VehicleRestController {
     private IVehicleService iVehicleService;
 
     @GetMapping("")
-    public ResponseEntity<Page<Vehicle>> getAllVehicle(Pageable pageable){
+    public ResponseEntity<Page<Vehicle>> getAllVehicle(Pageable pageable,
+                                                       @RequestParam("startTime") Optional<String> startTime,
+                                                       @RequestParam("spotSearch") Optional<String> spotSearch
+                                                       ){
+        if(spotSearch.isPresent() || startTime.isPresent()){
+            String start = startTime.orElse("");
+            String spot = spotSearch.orElse("");
+            Page<Vehicle> vehicleList = this.iVehicleService.search(start,spot,pageable);
+            return new ResponseEntity<>(vehicleList,HttpStatus.OK);
+        }
         Page<Vehicle> vehicleList = this.iVehicleService.getAll(pageable);
         return new ResponseEntity<>(vehicleList, HttpStatus.OK);
     }
