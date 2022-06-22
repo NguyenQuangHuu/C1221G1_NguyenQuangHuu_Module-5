@@ -10,20 +10,24 @@
 <div class="row g-3 mx-2">
   <div class="col-4">
 
-    <input type="text" class="form-control" id="staticEmail2" placeholder="Tìm kiếm theo loại xe">
-  </div>
-  <div class="col-4">
+<!--    <input type="text" class="form-control" id="staticEmail2" placeholder="Tìm kiếm theo loại xe">-->
+<!--  </div>-->
+<!--  <div class="col-4">-->
 
-    <input type="text" class="form-control" id="inputPassword2" placeholder="Tìm kiếm theo nhà xe">
+    <input type="text" class="form-control" id="inputPassword2" [(ngModel)]="timeStart" placeholder="Tìm kiếm theo giờ đi">
   </div>
   <div class="col-3">
 
-    <select name="" id="inputPassword3" class="form-select">
+    <select [(ngModel)]="spotSearch" id="inputPassword3" class="form-select">
       <option value="">---Nơi đến---</option>
+      <option value="Đà Nẵng">Đà Nẵng</option>
+      <option value="Quảng Trị">Quảng Trị</option>
+      <option value="Quảng Nam">Quảng Nam</option>
+      <option value="Quảng Ngãi">Quảng Ngãi</option>
     </select>
   </div>
   <div class="col-1">
-    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    <button type="button" (click)="getAll()" class="btn btn-primary">Tìm kiếm</button>
   </div>
 </div>
 <table class="table caption-top w-75 mx-auto">
@@ -44,7 +48,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let item of vehicleList">
+  <tr *ngFor="let item of vehicleList | paginate: { itemsPerPage: 3, currentPage : p}">
     <td>{{item.id}}</td>
     <td>{{item.numberPlate}}</td>
     <td>{{item.types.name}}</td>
@@ -64,9 +68,8 @@
   </tr>
   </tbody>
 </table>
-<div class="d-flex justify-content-around">
+<div class="text-center">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
 </div>
 <!-- Button trigger modal -->
 

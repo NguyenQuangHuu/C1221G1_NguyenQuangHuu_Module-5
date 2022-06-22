@@ -28,4 +28,7 @@ export class ItemService {
   updateById(id: number, vehicle: Vehicle): Observable<Vehicle> {
     return this.http.patch<Vehicle>(`${API_URL}/api/vehicles/${id}`, vehicle);
   }
+  searchByTimeStartAndSpotStop(time?: string, spot?: string): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(`${API_URL}/api/vehicles?startTime=${time}&spotSearch=${spot}`);
+  }
 }

@@ -7,7 +7,7 @@ import {ItemCreateComponent} from './item-create/item-create.component';
 import {ItemEditComponent} from './item-edit/item-edit.component';
 import {ItemsComponent} from './items.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import {ReactiveFormsModule} from '@angular/forms';
         ItemsRoutingModule,
         NgxPaginationModule,
         ReactiveFormsModule,
+        FormsModule,
     ]
 })
 export class ItemsModule { }

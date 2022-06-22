@@ -19,6 +19,8 @@ export class ItemListComponent implements OnInit {
   spotList: VehicleType[] = [];
   stationList: CoachStation[] = [];
   p: string | number = 0;
+  spotSearch = '';
+  timeStart = '';
   constructor(private service: ItemService,
               private route: Router,
               private vehicleTypeService: VehicleTypeService,
@@ -28,12 +30,12 @@ export class ItemListComponent implements OnInit {
     this.getAll();
   }
   getAll() {
-    this.service.getAll().subscribe(
+    this.service.searchByTimeStartAndSpotStop(this.timeStart, this.spotSearch).subscribe(
       data => {
+        console.log(data);
         // @ts-ignore
         this.vehicleList = data.content;
       },
-        error => console.log(error)
     );
   }
   getTypeList() {
