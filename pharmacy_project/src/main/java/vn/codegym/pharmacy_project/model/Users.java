@@ -1,9 +1,8 @@
 package vn.codegym.pharmacy_project.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -12,11 +11,16 @@ public class Users {
     private String username;
     private String password;
     @Column(columnDefinition = "BIT")
-    private boolean flag;
-    @OneToMany(mappedBy = "users")
+    private boolean flag = true;
+    @OneToMany(mappedBy = "users",fetch = FetchType.EAGER)
     List<UserRole> userRoleList;
 
     public Users() {
+    }
+
+    public Users(String username,String password) {
+        this.username = username;
+        this.password = password;
     }
 
     public String getUsername() {

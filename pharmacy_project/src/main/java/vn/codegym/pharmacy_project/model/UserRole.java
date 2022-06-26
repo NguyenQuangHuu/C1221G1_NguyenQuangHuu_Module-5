@@ -10,18 +10,21 @@ public class UserRole {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userRoleId;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "username",referencedColumnName = "username")
-    @JsonBackReference
     private Users users;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "role", referencedColumnName = "roleId")
-    @JsonBackReference
     private Roles roles;
 
 
     public UserRole() {
+    }
+
+    public UserRole(Users users, Roles roles) {
+        this.users = users;
+        this.roles = roles;
     }
 
     public Integer getUserRoleId() {

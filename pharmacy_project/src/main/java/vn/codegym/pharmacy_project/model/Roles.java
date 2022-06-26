@@ -1,5 +1,7 @@
 package vn.codegym.pharmacy_project.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -9,10 +11,14 @@ public class Roles {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer roleId;
     private String roleName;
-    @OneToMany(mappedBy = "roles")
+    @OneToMany(mappedBy = "roles",fetch = FetchType.EAGER)
     private List<UserRole> userRoleList;
 
     public Roles() {
+    }
+
+    public Roles(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public Integer getRoleId() {
