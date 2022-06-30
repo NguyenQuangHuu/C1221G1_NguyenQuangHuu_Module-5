@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Màn hình đăng nhập</title>
+    <title>Đăng nhập</title>
     <style>
         *{
             box-sizing: border-box;
@@ -35,33 +35,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <body>
-<div class="bg-img"
+<div class="bg-img container-fluid"
 
 >
-    <div class="d-flex justify-content-center align-items-center  vh-100 m-auto">
+    <div class="row d-flex justify-content-center align-items-center  vh-100 m-auto">
         <div>
-            <div>
-                <h3 class="text-success">Đăng nhập</h3>
-            </div>
+
             <div class="h-50 p-4 shadow-lg  bg-white rounded">
+                <div>
+                    <h3 class="text-success">Đăng nhập</h3>
+                </div>
                 <h4 class="text-secondary">Cảm ơn quý khách đã tin cậy và lựa chọn chúng tôi</h4>
+                <hr >
                 <div class="row my-4">
                     <span class="text-success col-3 pl-4" style="font-size: 1.25rem">Tài khoản</span>
-                    <input type="text" class="w-100 border border-success rounded col-8 form-control-sm ml-4" placeholder="Tài khoản đăng nhập hoặc email">
+                    <input type="text" class="w-100 border border-success rounded col-8 form-control-sm ml-4" placeholder="pharmacy@email.com">
                 </div>
                 <div class="row my-4">
-
                     <span class="text-success col-3 pl-4" style="font-size: 1.25rem">Mật khẩu</span>
-                    <input type="password" class="w-100 border border-success rounded form-control-sm col-8 ml-4" placeholder="Mật khẩu của bạn">
-
+                    <input type="password" class="w-100 border border-success rounded form-control-sm col-8 ml-4">
                 </div>
 
+                <hr>
                 <div class=" d-flex justify-content-center">
                     <button class="btn btn-primary col-3 text-center mx-2"><i class="fa-brands fa-facebook"></i></button>
-                    <button class="btn btn-danger col-3 text-center mx-2"><i class="fa-brands fa-google"></i></button>
+                    <button class="btn btn-danger col-3 text-center mx-2"><i class="fa-brands fa-instagram"></i></i></button>
                     <button class="btn btn-info col-3 text-center mx-2"><i class="fa-brands fa-twitter"></i></button>
                 </div>
-                <p class="text-center text-success my-2">Quý khách có thể đăng nhập bằng tài khoản mạng xã hội của chính mình</p>
+                <p class="text-center text-success my-2">Quý khách có thể đăng nhập bằng tài khoản mạng xã hội</p>
                 <div class="row my-2">
                     <a href="#" class="btn btn-secondary col-4 mx-auto">Thoát</a>
                     <a href="#" class="btn btn-success col-4 mx-auto">Đăng nhập</a>
